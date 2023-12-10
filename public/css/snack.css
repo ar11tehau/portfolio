@@ -1,0 +1,166 @@
+html {
+    background-image: url('./img/background_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    max-width: 600px;
+    margin: auto;
+    font-size: 4vmin;
+}
+
+body {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Style for sections */
+section {
+    max-width: 100%;
+  }
+
+/* Style for section head-title */
+
+header {
+    max-width: 100%;
+    position:sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+.head-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    width: 20%;
+    height: auto;
+}
+
+.logo img {
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+}
+
+/* Section for call part */
+.call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.call h3 {
+    margin: 0;
+}
+.call a {
+    margin: 0;
+    text-decoration: none;
+    color: grey;
+}
+
+.call a:hover {
+    color: black;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+.call img {
+    margin: 4px;
+    max-width: 30px;
+    width: 8vmin;
+    object-fit: contain;
+    animation: rotate 1.5s infinite alternate;
+}
+
+
+/* Category items*/
+.category {
+    width: 90%;
+    margin: auto;
+}
+
+.category h2 {
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
+
+/* Style for items */
+.item {
+    display: flex;
+    min-width: 90%;
+    margin: auto;
+    align-items: center;
+}
+
+/* Style for item name and price */
+.item-titre {
+    min-width: 70%;
+}
+
+.item-name {
+    min-width: 70%;
+}
+
+.item-price {
+    width: 30%;
+    text-align: right;
+    font-weight: bold;
+}
+
+.item-price-petit {
+    width: 15%;
+    text-align: right;
+    font-weight: bold;
+}
+
+.item-price-grand {
+    width: 15%;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+@media (min-width: 600px) {
+    html {
+        font-size: 1.4em;
+    }
+}
+
+/* Sytle for the footer */
+footer {
+    width: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* Style for the Facebook logo link */
+footer a {
+    text-decoration: none; 
+    color: black;
+    display: flex;
+}
+
+/* Style for the Facebook logo image */
+footer a img {
+    width: 50px;
+    height: auto;
+    padding: 4vmin;
+}
+
+/* Hover effect (Optional) */
+footer a img:hover {
+    transform: scale(1.4); /* Scale up the image on hover */
+    transition: transform 0.2s ease; /* Add a smooth transition effect */
+}

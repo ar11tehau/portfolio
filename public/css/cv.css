@@ -1,0 +1,292 @@
+body{
+    max-width: 827px;
+    width: 100%;
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 5px 7px 2px black;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .top {
+    display: flex;
+    align-items: center;
+  }
+  
+  .lang {
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .top h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 5px auto;
+  }
+  
+  /* Style for the main section */
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Lang options */
+  .lang a {
+    text-decoration: none;
+  }
+  .lang img {
+    border-radius: 30px;
+    margin: 5px;
+  }
+  
+  /* Style for the header */
+  header {
+    display: flex;
+    height: fit-content;
+    background-color: #f2f2f2;
+    margin: 5px 0;
+  }
+  
+  .poste {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .head-poste {
+    margin: 4px;
+  }
+  
+  .motivation {
+    padding: 10px;
+    text-align: justify;
+    font-style: italic;
+  }
+  
+  .info {
+    width: fit-content;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .socials {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  /* Styles for logo */
+  .info a {
+    margin: 5px 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: unset;
+  }
+  
+  .info a:visited {
+    color: unset;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo{
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 3px;
+  }
+  
+  .photo {
+    width: fit-content;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .photo_cv {
+    width: 130px;
+    object-fit: cover;
+  }
+  
+  
+  /* Styles for the content */
+  .content {
+    margin:auto;
+    width: 95%;
+  }
+  
+  h2 {
+    margin: 10px 0;
+  }
+  
+  h3, p {
+    margin: 2px;
+  }
+  
+  .content h2::before {
+    display: block;
+    content: "";
+    background-color: rgb(0, 119, 40);
+    width: 100%;
+    height: 2px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for skilss */
+  .skills_qualities {
+    display: flex;
+  }
+  
+  .skills_qualities h2 {
+    text-align: center;
+  }
+  .skills {
+    width: 60%;
+  }
+  
+  .skill-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .skill {
+    min-width: 7em;
+    padding: 5px;
+    margin: 0.5em;
+    box-shadow: 2px 2px 2px 0px rgb(0, 119, 40);
+    text-align: center;
+  }
+  
+  .skill a {
+    text-decoration: none;
+    color: unset;
+  }
+  
+  .skill a:visited {
+    color: unset;
+  }
+  
+  .qualities {
+    width: 40%;
+  }
+  
+  .quality-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .quality {
+    min-width: fit-content;
+    padding: 5px;
+    margin: 0.5em;
+    text-align: center;
+  }
+  
+  .quality p::after {
+    display: block;
+    content: "";
+    background-color: rgb(0, 119, 40);
+    width: 100%;
+    height: 2px;
+    margin-bottom: 2px;
+  }
+  
+  /* Section */
+  
+  .sous-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+  
+  .tableau {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px;
+  }
+  
+  .period {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin: 0 2px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .period p {
+    min-width: fit-content;
+  }
+  
+  .position {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    margin: 0 2px;
+    font-style: italic;
+  }
+  
+  .job {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 2px;
+  }
+  
+  footer {
+    height: 20px;
+  }
+  
+  /* Pour les écrans plus grand que 650px */
+  @media (max-width: 650px) {
+    .top h1 {
+      font-size: 2em;
+    }
+  
+    header {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .photo {
+      order: 1;
+    }
+    .info {
+      order: 2;
+    }
+    .poste {
+      width: 100%;
+      background-color: white;
+      order: 3;
+    }
+  
+    .head-poste {
+      width: 100%;
+      background-color: white;
+    }
+    
+    .tableau {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+  
+    .period, .position, .job {
+      width: unset;
+      text-align: justify;
+      justify-content: start;
+    }
+  
+    .job {
+      width: 100%;
+    }
+  }

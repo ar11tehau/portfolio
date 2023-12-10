@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/tsparticles.bundle.min.js"></script>  
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<!-- <link rel="stylesheet" href="css/app.css"> -->
+	<title>Portfolio</title>
+</head>
+<body id="tsparticles">
+	<section class="h-[100dvh] flex flex-col justify-center items-center text-cyan-400 dark:text-cyan-400 p-3" id="home">
+		<div class="flex flex-col absolute top-0 right-0 items-center text-cyan-400 dark:text-cyan-400 m-3">
+			<h1 class="flex basis-full text-cyan-400 dark:text-cyan-400 font-extrabold">CV</h1>
+			<div class="flex basis-full">
+				<a class="" href="/cv/fr" target="_blank">
+					<img class="h-8 w-8 rounded-full m-3" src="/img/logo-fr.png" alt="logo fr">
+				</a>
+				<a class="" href="/cv/en" target="_blank">
+					<img class="h-8 w-8 rounded-full m-3 ml-0" src="/img/logo-en.png" alt="logo en">
+				</a>
+			</div>
+		</div>
+		<div class="flex flex-col w-fit items-center">
+			<h1 class="text-3xl lg:text-6xl font-extrabold text-cyan-400 dark:text-cyan-400 bg-black/80 m-3">DOMELIER Ariitehau</h1>
+			<h3 class="text-xl lg:text-3xl font-extrabold text-cyan-400 dark:text-cyan-400 bg-black/80 m-3">Développeur FullStack</h3>
+		</div>
+		<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer" src="/img/arrow.png" alt="arrow button" id="arrow_button">
+	</section>
+	<section class="h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3" id="about">
+		<div class="flex flex-col flex-wrap max-w-6xl text-l text-justify items-center justify-around grow lg:text-xl">
+			<div class="flex h-28 w-28 rounded-full overflow-hidden lg:h-80 lg:w-fit lg:rounded-lg lg:flex-none">
+				<img class="h-44 lg:h-80 max-w-fit" src="img/cv.png" alt="Photo of me">
+			</div>
+			<p class="indent-8 bg-black/80">
+				Au cours	des 10 années au service de la Marine Nationale, en tant qu'expert prévisionniste météo, j'ai développé un fort intérêt pour la programmation. Actuellement en formation de développeur FullStack à l'ENSEEIHT, j'approfondie mes connaissances des nouvelles technologies avec beaucoup d'enthousiasme.
+			</p>
+			<p class="indent-8 bg-black/80">
+				Ma méthodologie rigoureuse, forgée au fil de missions exigeantes, s'associe à mes compétences en gestion de projets et prise de décision rapide. Je souhaite contribuer à l'innovation en créant des applications exploitant à la fois mon expérience militaire et ma formation actuelle.
+			</p>
+			<div class="flex flex-row flex-wrap w-full max-w-2xl justify-around lg:flex-nowrap lg:my-3">
+				<a class="flex items-center p-1 " href="https://www.linkedin.com/in/domelier" target="_blank">
+					<img class="h-8 w-8 rounded-full mr-3" src="/img/logo-linkedin.png" alt="LinkedIn logo">LinkedIn
+				</a>
+				<a class="flex items-center p-1" href="https://github.com/ar11tehau/" target="_blank">
+					<img class="h-8 w-8 rounded-full mr-3 bg-white" src="/img/logo-github.png" alt="GitHub logo">GitHub
+				</a>  
+				<a class="flex items-center p-1" href="mailto:arii.fullstack@gmail.com">
+					<img class="h-8 w-8 rounded-full mr-3 bg-white/90" src="/img/logo-mail.png" alt="mail logo">arii.fullstack@gmail.com
+				</a>     
+			</div>		
+		</div>
+		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 sm:invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_2">	
+	</section>
+	<section class="h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3 " id="skills">
+		<div class="flex flex-col items-center justify-center grow">
+			<h1 class="flex justify-center font-extrabold text-center text-3xl lg:text-6xl">Langages</h1>
+			<div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:m-3">
+				<figure class="flex flex-col items-center mb-2 mx-3 lg:mx-10">
+					<img class="w-12 h-14 lg:w-20 lg:h-24 rounded-lg" src="/img/logo-python.png" alt="logo python">
+					<figcaption class="bg-black/80">Python</figcaption>
+				</figure>
+				<figure class="flex flex-col items-center mb-2 mx-3 lg:mx-10">
+					<img class="w-12 h-12 lg:w-24 lg:h-24 rounded-lg" src="/img/logo-shell.png" alt="logo ">
+					<figcaption class="bg-black/80">Shell</figcaption>
+				</figure>
+				<img class="w-12 h-12 lg:w-20 lg:h-20 rounded-lg mb-2 mx-3 bg-white" src="/img/logo-sql.png" alt="logo sql">
+				<img class="w-12 h-14 lg:w-20 lg:h-24 rounded-lg mb-2 mx-3 lg:mx-10" src="/img/logo-html.png" alt="logo html">
+				<img class="w-12 h-14 lg:w-20 lg:h-24 rounded-lg mb-2 mx-3 lg:mx-10" src="/img/logo-css.png" alt="logo css">
+				<img class="w-12 h-14 lg:w-20 lg:h-24 rounded-lg mb-2 mx-3 lg:mx-10" src="/img/logo-js.png" alt="logo js">
+				<img class="w-12 h-14 lg:w-20 lg:h-24 rounded-lg mb-2 mx-3 lg:mx-10" src="/img/logo-uml.png" alt="logo uml">
+			</div>
+		</div>
+		<div class="flex flex-col items-center justify-center grow">
+			<h1 class="flex justify-center font-extrabold text-center lg:text-6xl text-3xl">Framework et outils</h1>
+			<div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:mx-10">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-django.png" alt="logo Django">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-nodejs.png" alt="logo Node.js">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-expressjs.png" alt="logo Express.js">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-vuejs.png" alt="logo Vue.js">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-reactjs.png" alt="logo React.js">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-docker.png" alt="logo Docker">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white" src="/img/logo-kubernetes.png" alt="logo Kubernetes">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-aws.png" alt="logo Amazon Web Services">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-git.png" alt="logo Git">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white" src="/img/logo-scrum.png" alt="logo Scrum">
+			</div>
+		</div>
+		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 sm:invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_3">
+	</section>
+	<section class="h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3" id="projects">
+		<div class="flex flex-col justify-between items-center grow">
+			<h1 class="flex justify-center font-extrabold text-center text-3xl lg:text-6xl">Projects</h1>
+			<div class="flex flex-col justify-around grow">
+				<a class="underline underline-offset-4 m-3" href="https://food.domelier.fr/">Food</a>
+				<a class="underline underline-offset-4 m-3" href="https://www.snackteavaiti.com/">Snack</a>
+				<a class="underline underline-offset-4 m-3" href="https://yesno.domelier.fr/">Yesno</a>
+			</div>
+		</div>
+		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 sm:invisible lg:visible lg:w-14 lg:h-14 lg:m-6 rotate-180" src="/img/arrow.png" alt="arrow button" id="arrow_button_4">
+	</section>
+	<script src="js/particles_config.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
+

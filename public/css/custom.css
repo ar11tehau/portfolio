@@ -1,0 +1,20 @@
+.section {
+    border: solid white 2px;
+}
+
+
+.div { 
+    border: solid pink 2px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+html {
+    background-color: #000;
+}
+
+  
+
+  
