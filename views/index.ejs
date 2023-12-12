@@ -10,7 +10,7 @@
 	<title>Portfolio</title>
 </head>
 <body id="tsparticles">
-	<section class="h-[100dvh] flex flex-col justify-center items-center text-cyan-400 dark:text-cyan-400 p-3" id="home">
+	<section class="min-h-[100dvh] flex flex-col justify-center items-center text-cyan-400 dark:text-cyan-400 p-3" id="home">
 		<div class="flex flex-col absolute top-0 right-0 items-center text-cyan-400 dark:text-cyan-400 m-3">
 			<h1 class="flex basis-full text-cyan-400 dark:text-cyan-400 font-extrabold">CV</h1>
 			<div class="flex basis-full">
@@ -26,9 +26,9 @@
 			<h1 class="text-3xl lg:text-6xl font-extrabold text-cyan-400 dark:text-cyan-400 bg-black/80 m-3">DOMELIER Ariitehau</h1>
 			<h3 class="text-xl lg:text-3xl font-extrabold text-cyan-400 dark:text-cyan-400 bg-black/80 m-3">Développeur FullStack</h3>
 		</div>
-		<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer" src="/img/arrow.png" alt="arrow button" id="arrow_button">
+		<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer invisible lg:visible" src="/img/arrow.png" alt="arrow button" id="arrow_button">
 	</section>
-	<section class="h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3" id="about">
+	<section class="min-h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3" id="about">
 		<div class="flex flex-col flex-wrap max-w-6xl text-l text-justify items-center justify-around grow lg:text-xl">
 			<div class="flex h-28 w-28 rounded-full overflow-hidden lg:h-80 lg:w-fit lg:rounded-lg lg:flex-none">
 				<img class="h-44 lg:h-80 max-w-fit" src="img/cv.png" alt="Photo of me">
@@ -51,9 +51,9 @@
 				</a>     
 			</div>		
 		</div>
-		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 sm:invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_2">	
+		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_2">	
 	</section>
-	<section class="h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3 " id="skills">
+	<section class="min-h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3 " id="skills">
 		<div class="flex flex-col items-center justify-center grow">
 			<h1 class="flex justify-center font-extrabold text-center text-3xl lg:text-6xl">Langages</h1>
 			<div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:m-3">
@@ -107,9 +107,9 @@
 				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white" src="/img/logo-scrum.png" alt="logo Scrum">
 			</div>
 		</div>
-		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 sm:invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_3">
+		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_3">
 	</section>
-	<section class="h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3" id="projects">
+	<section class="min-h-[100dvh] flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3" id="projects">
 		<div class="flex flex-col justify-between items-center grow">
 			<h1 class="flex justify-center font-extrabold text-center text-3xl lg:text-6xl">Projects</h1>
 			<div class="flex flex-col justify-around grow">
@@ -118,8 +118,22 @@
 				<a class="underline underline-offset-4 m-3" href="https://yesno.domelier.fr/">Yesno</a>
 			</div>
 		</div>
-		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 sm:invisible lg:visible lg:w-14 lg:h-14 lg:m-6 rotate-180" src="/img/arrow.png" alt="arrow button" id="arrow_button_4">
+		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 invisible lg:visible lg:w-14 lg:h-14 lg:m-6 rotate-180" src="/img/arrow.png" alt="arrow button" id="arrow_button_4">
 	</section>
+	<nav class="flex bg-black sticky bottom-0 content-center lg:hidden">
+		<div class="flex justify-center w-3/12 m-3" id="logo-home">
+			<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-white" src="/img/logo-home.png" alt="logo home" id="logo_home">
+		</div>
+		<div class="flex justify-center w-3/12 m-3" id="logo-info">
+			<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-white" src="/img/logo-about.png" alt="logo about" id="logo_about">
+		</div>
+		<div class="flex justify-center w-3/12 m-3" id="logo-skills">
+			<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-white" src="/img/logo-skills.png" alt="logo skills" id="logo_skills">
+		</div>
+		<div class="flex justify-center w-3/12 m-3" id="logo-projects">
+			<img class="w-8 h-8 lg:w-14 lg:h-14 lg:m-6 rounded-full bg-white" src="/img/logo-projects.png" alt="logo projects" id="logo_projects">
+		</div>
+	</nav>
 	<script src="js/particles_config.js"></script>
 	<script src="js/script.js"></script>
 </body>

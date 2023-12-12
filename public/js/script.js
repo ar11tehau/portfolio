@@ -2,19 +2,21 @@
 
 
 function init() {
-    const arrow_button = document.getElementById("arrow_button")
-    arrow_button.addEventListener("click", () => {scroll_to(find("about"))})
+    click_go("arrow_button", "about")
+    click_go("arrow_button_2", "skills")
+    click_go("arrow_button_3", "projects")
+    click_go("arrow_button_4", "home")
 
-    const arrow_button_2 = document.getElementById("arrow_button_2")
-    arrow_button_2.addEventListener("click", () => {scroll_to(find("skills"))})
-
-    const arrow_button_3 = document.getElementById("arrow_button_3")
-    arrow_button_3.addEventListener("click", () => {scroll_to(find("projects"))})
-
-    const arrow_button_4 = document.getElementById("arrow_button_4")
-    arrow_button_4.addEventListener("click", () => {scroll_to(find("home"))})
+    click_go("logo_home", "home")
+    click_go("logo_about", "about")
+    click_go("logo_skills", "skills")
+    click_go("logo_projects", "projects")
 }
 
+function click_go(elt, dest) {
+    elt = document.getElementById(`${elt}`)
+    elt.addEventListener("click", () => {scroll_to(find(`${dest}`))})
+}
 
 function find(id) {
     const element = document.getElementById(id)

@@ -2,9 +2,8 @@
     border: solid white 2px;
 }
 
-
 .div { 
-    border: solid pink 2px;
+    border: solid black 2px;
 }
 
 body::-webkit-scrollbar {
