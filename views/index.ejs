@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<!-- <link rel="stylesheet" href="css/app.css"> -->
 	<title>Portfolio</title>
+	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 </head>
 <body id="tsparticles">
 	<section class="min-h-screen flex flex-col justify-center items-center text-cyan-400 dark:text-cyan-400 p-3" id="home">
@@ -95,16 +96,21 @@
 		<div class="flex flex-col items-center justify-center grow">
 			<h1 class="flex justify-center font-extrabold text-center lg:text-6xl text-3xl">Framework et outils</h1>
 			<div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:mx-10">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-django.png" alt="logo Django">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-nodejs.png" alt="logo Node.js">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-expressjs.png" alt="logo Express.js">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-vuejs.png" alt="logo Vue.js">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-reactjs.png" alt="logo React.js">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white lg:pt-6 lg:pb-6 p-2" src="/img/logo-nginx.png" alt="logo Nginx">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white lg:pt-4 lg:pb-4 p-2" src="/img/logo-pm2.png" alt="logo Pm2">
 				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-docker.png" alt="logo Docker">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white" src="/img/logo-kubernetes.png" alt="logo Kubernetes">
+				<!-- <img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white" src="/img/logo-kubernetes.png" alt="logo Kubernetes"> -->
 				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-aws.png" alt="logo Amazon Web Services">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white lg:pl-6 lg:pr-6 pl-8 pr-8" src="/img/logo-psql.png" alt="logo PostGreSQL">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-nodejs.png" alt="logo NodeJs">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-expressjs.png" alt="logo ExpressJs">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white lg:pt-4 lg:pb-4 p-2" src="/img/logo-vite.png" alt="logo Vite">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-vuejs.png" alt="logo Vue.js">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-reactjs.png" alt="logo ReactJs">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-tailwind.png" alt="logo Tailwind">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-django.png" alt="logo Django">
+				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white pl-4 pr-4" src="/img/logo-scrum.png" alt="logo Scrum">
 				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10" src="/img/logo-git.png" alt="logo Git">
-				<img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white" src="/img/logo-scrum.png" alt="logo Scrum">
 			</div>
 		</div>
 		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 invisible lg:visible lg:w-14 lg:h-14 lg:m-6" src="/img/arrow.png" alt="arrow button" id="arrow_button_3">
@@ -113,9 +119,84 @@
 		<div class="flex flex-col justify-between items-center grow">
 			<h1 class="flex justify-center font-extrabold text-center text-3xl lg:text-6xl">Projects</h1>
 			<div class="flex flex-col justify-around grow">
-				<a class="underline underline-offset-4 m-3" href="https://food.domelier.fr/">Food</a>
-				<a class="underline underline-offset-4 m-3" href="https://snackteavaiti.com/">Snack</a>
-				<a class="underline underline-offset-4 m-3" href="https://yesno.domelier.fr/">Yesno</a>
+				<div class="border border-white rounded-md p-2 m-1">
+					<div class="m-4">
+						<p class="text-2xl font-bold">Tickets</p>
+						<p class="text-white text-lg pb-2 font-bold">Application qui permet de soumettre un problème d'ordinateur, de meuble ou autre</p>
+						<p class="text-white pb-2">Authentification, autorisation, persistence des tickets, affichage des tickets, tri des tickets</p>
+						<p class="text-white italic pb-2">(login: "test@test.fr", mdp:"testme")</p>
+					</div>
+					<div class="flex justify-around flex-wrap">
+						<div class="flex">
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-js.png" alt="logo JavaScript"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-html.png" alt="logo HTML"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-css.png" alt="logo CSS"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1 pt-2 pb-2" src="/img/logo-tailwind-2.png" alt="logo Tailwind"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md" src="/img/logo-vite-2.png" alt="logo Vite"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md pt-1 pb-1" src="/img/logo-vuejs-2.png" alt="logo Vue"/>
+						</div>
+						<div class="flex">
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-nginx-2.png" alt="logo Nginx"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-pm2-2.png" alt="logo Pm2"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-expressjs-2.png" alt="logo ExpressJs"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md" src="/img/logo-nodejs-2.png" alt="logo NodeJs"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md" src="/img/logo-psql-2.png" alt="logo PostGreSQL"/>
+						</div>
+					</div>
+
+					<div class="flex justify-around m-4">
+						<a class="rounded-md p-1 bg-cyan-400 text-black hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" href="https://github.com/ar11tehau/tickets">Code</a>
+						<a class="rounded-md p-1 bg-cyan-400 text-black hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" href="https://tickets.domelier.fr">App Desktop</a>
+					</div>
+				</div>
+				<div class="border border-white rounded-md p-2 m-1">
+					<div class="m-4">
+						<p class="text-2xl font-bold">Snack</p>
+						<p class="text-white text-lg pb-2 font-bold">Site statique pour un menu de restauration à emporter</p>
+						<p class="text-white pb-2">Outil de conversion de monnaie, mise à jour quotidienne des valeurs monétaires, utilisation d'API</p>
+					</div>
+					<div class="flex justify-around flex-wrap">
+						<div class="flex">
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-js.png" alt="logo JavaScript"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-html.png" alt="logo HTML"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-css.png" alt="logo CSS"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1 pt-2 pb-2" src="/img/logo-tailwind-2.png" alt="logo Tailwind"/>
+						</div>
+						<div class="flex">
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-nginx-2.png" alt="logo Nginx"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-pm2-2.png" alt="logo Pm2"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-expressjs-2.png" alt="logo ExpressJs"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md" src="/img/logo-nodejs-2.png" alt="logo NodeJs"/>
+						</div>
+					</div>
+					<div class="flex justify-around m-4">
+						<a class="rounded-md p-1 bg-cyan-400 text-black hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" href="https://github.com/ar11tehau/snack">Code</a>
+						<a class="rounded-md p-1 bg-cyan-400 text-black hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" href="https://snackteavaiti.com">App Desktop/Mobile</a>
+					</div>
+				</div>
+				<div class="border border-white rounded-md p-2 m-1">
+					<div class="m-4">
+						<p class="text-2xl font-bold">YesNo</p>
+						<p class="text-white text-lg pb-2 font-bold">Outil d'aide à la décision drôle</p>
+						<p class="text-white pb-2">Renvoi aléatoire d'une image Oui ou Non</p>
+					</div>
+					<div class="flex justify-around flex-wrap">
+						<div class="flex">
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-html.png" alt="logo HTML"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-css.png" alt="logo CSS"/>
+						</div>
+						<div class="flex">
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-nginx-2.png" alt="logo Nginx"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-pm2-2.png" alt="logo Pm2"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md p-1" src="/img/logo-expressjs-2.png" alt="logo ExpressJs"/>
+							<img class="w-10 h-10 m-2 bg-white rounded-md" src="/img/logo-nodejs-2.png" alt="logo NodeJs"/>
+						</div>
+					</div>
+					<div class="flex justify-around m-4">
+						<a class="rounded-md p-1 bg-cyan-400 text-black hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" href="https://github.com/ar11tehau/yesno">Code</a>
+						<a class="rounded-md p-1 bg-cyan-400 text-black hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" href="https://yesno.domelier.fr">App Desktop/Mobile</a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<img class="w-8 h-8 rounded-full bg-cyan-400 hover:bg-cyan-600 hover:cursor-pointer mt-3 invisible lg:visible lg:w-14 lg:h-14 lg:m-6 rotate-180" src="/img/arrow.png" alt="arrow button" id="arrow_button_4">
@@ -136,6 +217,6 @@
 	</nav>
 	<script src="js/particles_config.js"></script>
 	<script src="js/script.js"></script>
-</body>
+</body>expressjs
 </html>
 

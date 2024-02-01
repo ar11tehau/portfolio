@@ -4,25 +4,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/css/cv.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/style.css" rel="stylesheet"  type="text/css">
         <title>Curriculum Vitae</title>
     </head>
-    <body>
+    <body class="flex m-auto">
         <section class="main">
             <div class="top">
-                <div class="lang">
+                <!-- <div class="lang">
                     <a href="/cv/fr">
                         <img class="logo" src="/img/logo-fr.png" alt="French flag">
                     </a>
                     <a href="/cv/en">
                         <img class="logo" src="/img/logo-en.png" alt="English flag">
                     </a>
-                </div>
+                </div> -->
             <h1>DOMELIER Ariitehau</h1>
             </div>
             <header>
                 <div class="info">
-                    <div class="links">
+                    <div class="links flex flex-col justify-center">
                         <a href="mailto:arii.fullstack@gmail/img.com"><img class="logo" src="/img/logo-mail.png" alt="mail logo">arii.fullstack@gmail.com</a>
+                        <div class="flex items-center">
+                            <img class="logo " src="/img/logo-tel.png" alt="GitHub logo">
+                            <p>06 18 20 81 83</p>
+                        </div>
                         <div class="socials">
                             <a href="https://www.linkedin.com/in/domelier" target="_blank">
                                 <img class="logo" src="/img/logo-linkedin.png" alt="LinkedIn logo">LinkedIn
@@ -39,11 +44,11 @@
                 <div class="poste">
                     <div class="head-poste">
                         <h2>Développeur FullStack</h2>
-                        <p>Recherche stage de 5 mois</p>
-                        <p>De Mars à Juillet 2023</p>
+                        <!-- <p>Recherche stage de 5 mois</p>
+                        <p>De Mars à Juillet 2023</p> -->
                     </div>
                     <div class="motivation">
-                        <p>En reconversion, après 10 ans dans la Marine Nationale, je recherche un stage de 5 mois pour appliquer les compétences acquises lors de la formation de développeur FullStack à l'ENSEEIHT, INP. Je pense être un excellent candidat pour développer vos prochaines applications au sein de votre équipe.</p>
+                        <p>En reconversion, après 10 ans dans la Marine Nationale, la formation de développeur FullStack à l'ENSEEIHT (INP) m'a permis d'aquérir de solide compétences dans le développement informatique. Je pense être un excellent candidat pour développer vos prochaines applications au sein de votre équipe.</p>
                     </div>
                 </div>
             </header>
@@ -163,14 +168,22 @@
                         </div>
                     </div>
                 </div>
-                <h2>Langues/Loisirs</h2>
-                <div class="sous-section">
+                <h2 class="mb-2">Langues/Loisirs</h2>
+                <div class="flex flex-col justify-between">
                     <p>Anglais: niveau C1</p>
-                    <p>Beach Volley-Ball</p>
+                    <p class="mb-4">Beach Volley-Ball</p>
+                    <div class="flex justify-around items-center">
+                        <a class="text-black no-underline flex items-center" href="mailto:arii.fullstack@gmail/img.com">
+                            <img class="logo" src="/img/logo-mail.png" alt="mail logo">arii.fullstack@gmail.com</a>
+                        <a class="text-black no-underline flex items-center" href="https://www.linkedin.com/in/domelier" target="_blank">
+                            <img class="logo" src="/img/logo-linkedin.png" alt="LinkedIn logo">linkedin.com/in/domelier
+                        </a>
+                        <a class="text-black no-underline flex items-center" href="https://github.com/ar11tehau/" target="_blank">
+                            <img class="logo" src="/img/logo-github.png" alt="GitHub logo">github.com/ar11tehau
+                        </a>          
+                    </div>
                 </div>
             </section>
-            <footer>            
-            </footer>
         </section>
     </body>
 </html>
