@@ -141,6 +141,7 @@ body{
   /* Styles for skilss */
   .skills_qualities {
     display: flex;
+    flex-wrap: wrap;
   }
   
   .skills_qualities h2 {
@@ -148,12 +149,13 @@ body{
   }
   .skills {
     width: 60%;
+
   }
   
   .skill-set {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
   
   .skill {
@@ -247,7 +249,7 @@ body{
     height: 20px;
   }
   
-  /* Pour les écrans plus grand que 650px */
+  /* Pour les écrans plus petit que 650px */
   @media (max-width: 650px) {
     .top h1 {
       font-size: 2em;
@@ -287,6 +289,13 @@ body{
     }
   
     .job {
+      width: 100%;
+    }
+
+    .skills {
+      width: 100%;
+    }
+    .qualities {
       width: 100%;
     }
   }
