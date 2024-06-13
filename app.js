@@ -18,8 +18,7 @@ app.get("/", function(req, res) {
 })
 
 app.get("/cv", function(req, res) {
-    const filePath = path.join(__dirname, 'public/pdf/DOMELIER_ARIITEHAU_CV.pdf');
-    res.sendFile(filePath)
+    res.sendFile('pdf/DOMELIER_ARIITEHAU_CV.pdf')
 });
 
 // app.get("/cv/fr", function(req, res) {
