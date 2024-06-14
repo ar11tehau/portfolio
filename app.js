@@ -22,13 +22,13 @@ app.get("/cv", function(req, res) {
     res.sendFile(filename)
 });
 
-// app.get("/cv/fr", function(req, res) {
-//     res.render("cv_fr")
-// })
+app.get("/cv/fr", function(req, res) {
+    res.render("cv_fr")
+})
 
-// app.get("/cv/en", function(req, res) {
-//     res.render("cv_en")
-// })
+app.get("/cv/en", function(req, res) {
+    res.render("cv_en")
+})
 
 
 app.listen(PORT, function () {
