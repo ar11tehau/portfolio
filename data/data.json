@@ -233,7 +233,6 @@
          { "src": "/img/logo-nginx.png", "alt": "logo Nginx", "name": "Nginx" },
          { "src": "/img/logo-pm2.png", "alt": "logo Pm2", "name": "Pm2" },
          { "src": "/img/logo-docker.png", "alt": "logo Docker", "name": "Docker" },
-         { "src": "/img/logo-aws.png", "alt": "logo Amazon Web Services", "name": "AWS" },
          { "src": "/img/logo-psql.png", "alt": "logo PostGreSQL", "name": "PostgreSQL" },
          { "src": "/img/logo-nodejs.png", "alt": "logo NodeJs", "name": "Node.js" },
          { "src": "/img/logo-expressjs.png", "alt": "logo ExpressJs", "name": "Express.js" },
