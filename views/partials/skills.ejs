@@ -1,0 +1,22 @@
+<section class="min-h-screen flex flex-col justify-between items-center text-cyan-400 dark:text-cyan-400 p-3 " id="skills">
+    <div class="flex flex-col items-center justify-center grow">
+        <h1 class="flex justify-center font-extrabold text-center text-3xl lg:text-6xl"><%- data.skills.title_langages %></h1>
+        <div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:m-3">
+            <% data.skills.technologies.forEach(technology => { %>
+                <figure class="flex flex-col items-center mb-2 mx-3 lg:mx-10">
+                    <img class="w-12 h-12 lg:w-20 lg:h-20 rounded-lg mb-2 mx-3 bg-white" src="<%- technology.src %>" alt="<%- technology.alt %>">
+                    <figcaption class="bg-black/80 invisible md:visible"><%- technology.name %></figcaption>
+                </figure>
+            <% }) %>              
+        </div>
+    </div>
+    <div class="flex flex-col items-center justify-center grow">
+        <h1 class="flex justify-center font-extrabold text-center lg:text-6xl text-3xl"><%- data.skills.title_frameworks %></h1>
+        <div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:mx-10">
+            <% data.skills.frameworksAndTools.forEach(frames => { %>
+                <img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white lg:pl-6 lg:pr-6 pl-8 pr-8" src="<%- frames.src %>" alt="<%- frames.alt %>">
+            <% }) %>   
+        </div>
+    </div>
+    <%- include('arrow',  { id: 'arrow_button_3' }) %>
+</section>

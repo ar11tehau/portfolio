@@ -1,0 +1,21 @@
+<section class="min-h-screen flex flex-col justify-center items-center text-cyan-400 dark:text-cyan-400 p-3" id="<%- data.home.id %>">
+    <div class="flex flex-col absolute top-0 right-0 items-center text-cyan-400 dark:text-cyan-400 m-3">
+        <h1 class="flex basis-full text-cyan-400 dark:text-cyan-400 font-extrabold">
+            <%- data.home.cv.title %>
+        </h1>
+        <div class="flex basis-full">
+            <a class="" href="<%- data.home.cv.href %>" target="_blank">
+                <img class="h-8 w-8 rounded-sm m-3 hover:h-10 hover:w-10" src="<%- data.home.cv.src %>" alt="<%- data.home.cv.alt %>" />
+            </a>
+        </div>
+    </div>
+    <div class="flex flex-col w-fit items-center">
+        <h1 class="text-3xl lg:text-6xl font-extrabold text-cyan-400 dark:text-cyan-400 bg-black/80 m-3">
+            <%- data.home.name %>
+        </h1>
+        <h3 class="text-xl lg:text-3xl font-extrabold text-cyan-400 dark:text-cyan-400 bg-black/80 m-3">
+            <%- data.home.job %>
+        </h3>
+    </div>
+    <%- include('arrow', { id: 'arrow_button' }) %>
+</section>

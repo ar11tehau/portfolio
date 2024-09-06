@@ -1,11 +1,15 @@
+"use strict"
 import express from 'express';
 import path from 'path';
+import fs from "fs"
 
 const PORT = 3100
 
 const app = express()
 
 const __dirname = import.meta.dirname;
+
+const data = JSON.parse(fs.readFileSync('./data/data.json', 'utf8'));
 
 // Use Static data
 app.use(express.static('public'));
@@ -14,7 +18,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs')
 
 app.get("/", function(req, res) {
-    res.render("index", { title: "Portfolio" })
+    res.render("layout", { title: "Portfolio", data: data })
 })
 
 app.get("/cv", function(req, res) {

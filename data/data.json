@@ -1,0 +1,271 @@
+{
+   "about": {
+      "id": "about",
+      "content": {
+         "image": {
+            "src": "img/cv.png",
+            "alt": "Photo of me"
+         },
+         "paragraphs": [
+            {
+               "text": "Au cours des 10 années au service de la Marine Nationale, en tant qu'expert prévisionniste météo, j'ai développé un fort intérêt pour la programmation. Actuellement en stage \"Ingénieur de développeur FullStack\" à Alteca Toulouse, je mets en application les connaissances et compétences acquises au cours de la formation de \"<a class='italic underline decoration-cyan-400' href='https://formations.enseeiht.fr/fr/offre-de-formations/diplome-universitaire-FC_DU/diplome-D/d-u-developpeur-d-applications-full-stack-program-program1-nih1-16-fr.html'>Développeur d'application FullStack</a>\" de l'ENSEEIHT."
+            },
+            {
+               "text": "Ma méthodologie rigoureuse, forgée au fil de missions exigeantes, s'associe à mes compétences en gestion de projets et prise de décision rapide. Je souhaite contribuer à l'innovation en créant des applications exploitant à la fois mon expérience militaire et ma formation actuelle."
+            }
+         ],
+         "links": [
+            {
+               "href": "https://www.linkedin.com/in/domelier",
+               "text": "LinkedIn",
+               "icon": {
+                  "src": "/img/logo-linkedin.png",
+                  "alt": "LinkedIn logo"
+               }
+            },
+            {
+               "href": "https://github.com/ar11tehau/",
+               "text": "GitHub",
+               "icon": {
+                  "src": "/img/logo-github.png",
+                  "alt": "GitHub logo"
+               }
+            },
+            {
+               "href": "mailto:arii.fullstack@gmail.com",
+               "text": "arii.fullstack@gmail.com",
+               "icon": {
+                  "src": "/img/logo-mail.png",
+                  "alt": "mail logo"
+               }
+            }
+         ],
+         "arrow_button": {
+            "src": "/img/arrow.png",
+            "alt": "arrow button",
+            "id": "arrow_button_2"
+         }
+      }
+   },
+   "header": {
+      "title": "CV",
+      "link": {
+         "href": "/cv",
+         "icon": {
+            "src": "/img/logo-pdf.png",
+            "alt": "logo pdf"
+         }
+      }
+   },
+   "home": {
+      "id": "home",
+      "cv" : {
+         "title": "CV",
+         "href": "/cv",
+         "src" : "/img/logo-pdf.png",
+         "alt": "alt"
+      },
+      "name": "DOMELIER Ariitehau",
+      "job": "Développeur FullStack"
+   },
+   "projects": {
+      "id": "projects",
+      "title": "Projects",
+      "projects": [
+         {
+            "title": "Chat",
+            "description": "Application de chat qui permet de discuter avec un ami en REACT et webSocket",
+            "details": [
+               "Choix du pseudonyme, des contacts, persistence des données, affichage des messages, envoi/réception message en temps réel"
+            ],
+            "technologies": {
+               "frontend": [
+                  { "src": "/img/logo-js.png", "alt": "logo JavaScript" },
+                  { "src": "/img/logo-html.png", "alt": "logo HTML" },
+                  { "src": "/img/logo-css.png", "alt": "logo CSS" },
+                  { "src": "/img/logo-tailwind-2.png", "alt": "logo Tailwind" },
+                  { "src": "/img/logo-vite-2.png", "alt": "logo Vite" },
+                  { "src": "/img/logo-react-2.svg", "alt": "logo React" }
+               ],
+               "backend": [
+                  { "src": "/img/logo-nginx-2.png", "alt": "logo Nginx" },
+                  { "src": "/img/logo-pm2-2.png", "alt": "logo Pm2" },
+                  { "src": "/img/logo-expressjs-2.png", "alt": "logo ExpressJs" },
+                  { "src": "/img/logo-nodejs-2.png", "alt": "logo NodeJs" },
+                  { "src": "/img/logo-psql-2.png", "alt": "logo PostGreSQL" }
+               ]
+            },
+            "links": [
+               {
+                  "href": "https://github.com/ar11tehau/chatWebsocket",
+                  "text": "Code"
+               },
+               {
+                  "href": "https://chat.domelier.fr",
+                  "text": "Site Desktop/Mobile"
+               }
+            ]
+         },
+         {
+            "title": "Tickets",
+            "description": "Application qui permet de soumettre un problème d'ordinateur, de meuble ou autre",
+            "details": [
+               "Authentification, autorisation, persistence des tickets, affichage des tickets, tri des tickets",
+               "(login: \"test@test.fr\", mdp:\"testme\")"
+            ],
+            "technologies": {
+               "frontend": [
+                  { "src": "/img/logo-js.png", "alt": "logo JavaScript" },
+                  { "src": "/img/logo-html.png", "alt": "logo HTML" },
+                  { "src": "/img/logo-css.png", "alt": "logo CSS" },
+                  { "src": "/img/logo-tailwind-2.png", "alt": "logo Tailwind" },
+                  { "src": "/img/logo-vite-2.png", "alt": "logo Vite" },
+                  { "src": "/img/logo-vuejs-2.png", "alt": "logo Vue" }
+               ],
+               "backend": [
+                  { "src": "/img/logo-nginx-2.png", "alt": "logo Nginx" },
+                  { "src": "/img/logo-pm2-2.png", "alt": "logo Pm2" },
+                  { "src": "/img/logo-expressjs-2.png", "alt": "logo ExpressJs" },
+                  { "src": "/img/logo-nodejs-2.png", "alt": "logo NodeJs" },
+                  { "src": "/img/logo-psql-2.png", "alt": "logo PostGreSQL" }
+               ]
+            },
+            "links": [
+               {
+                  "href": "https://github.com/ar11tehau/tickets",
+                  "text": "Code"
+               },
+               {
+                  "href": "https://tickets.domelier.fr",
+                  "text": "Site Desktop/Mobile"
+               }
+            ]
+         },
+         {
+            "title": "Snack",
+            "description": "Site statique pour un menu de restauration à emporter",
+            "details": [
+               "Outil de conversion de monnaie, mise à jour quotidienne des valeurs monétaires, utilisation d'API"
+            ],
+            "technologies": {
+               "frontend": [
+                  { "src": "/img/logo-js.png", "alt": "logo JavaScript" },
+                  { "src": "/img/logo-html.png", "alt": "logo HTML" },
+                  { "src": "/img/logo-css.png", "alt": "logo CSS" },
+                  { "src": "/img/logo-tailwind-2.png", "alt": "logo Tailwind" }
+               ],
+               "backend": [
+                  { "src": "/img/logo-nginx-2.png", "alt": "logo Nginx" },
+                  { "src": "/img/logo-pm2-2.png", "alt": "logo Pm2" },
+                  { "src": "/img/logo-expressjs-2.png", "alt": "logo ExpressJs" },
+                  { "src": "/img/logo-nodejs-2.png", "alt": "logo NodeJs" }
+               ]
+            },
+            "links": [
+               { "href": "https://github.com/ar11tehau/snack", "text": "Code" },
+               {
+                  "href": "https://snackteavaiti.com",
+                  "text": "Site Desktop/Mobile"
+               }
+            ]
+         },
+         {
+            "title": "YesNo",
+            "description": "Outil d'aide à la décision drôle",
+            "details": ["Renvoi aléatoire d'une image Oui ou Non"],
+            "technologies": {
+               "frontend": [
+                  { "src": "/img/logo-html.png", "alt": "logo HTML" },
+                  { "src": "/img/logo-css.png", "alt": "logo CSS" }
+               ],
+               "backend": [
+                  { "src": "/img/logo-nginx-2.png", "alt": "logo Nginx" },
+                  { "src": "/img/logo-pm2-2.png", "alt": "logo Pm2" },
+                  { "src": "/img/logo-expressjs-2.png", "alt": "logo ExpressJs" },
+                  { "src": "/img/logo-nodejs-2.png", "alt": "logo NodeJs" }
+               ]
+            },
+            "links": [
+               { "href": "https://github.com/ar11tehau/yesno", "text": "Code" },
+               {
+                  "href": "https://yesno.domelier.fr",
+                  "text": "Site Desktop/Mobile"
+               }
+            ]
+         },
+         {
+            "title": "Curriculum Vitae (ancien)",
+            "description": "Premier site statique réalisé en HTML et CSS",
+            "details": ["CV en français ou anglais"],
+            "technologies": {
+               "frontend": [
+                  { "src": "/img/logo-html.png", "alt": "logo HTML" },
+                  { "src": "/img/logo-css.png", "alt": "logo CSS" }
+               ],
+               "backend": [
+                  { "src": "/img/logo-nginx-2.png", "alt": "logo Nginx" },
+                  { "src": "/img/logo-pm2-2.png", "alt": "logo Pm2" },
+                  { "src": "/img/logo-expressjs-2.png", "alt": "logo ExpressJs" },
+                  { "src": "/img/logo-nodejs-2.png", "alt": "logo NodeJs" }
+               ]
+            },
+            "links": [
+               { "href": "https://github.com/ar11tehau/yesno", "text": "Code" },
+               { "href": "/cv/fr", "text": "Site Desktop/Mobile" }
+            ]
+         }
+      ]
+   },
+   "skills": {
+      "id": "skills",
+      "title_langages": "Langages",
+      "title_frameworks": "Framework et outils",
+      "technologies": [
+         { "src": "/img/logo-python.png", "alt": "logo python", "name": "Python" },
+         { "src": "/img/logo-shell.png", "alt": "logo shell", "name": "Shell" },
+         { "src": "/img/logo-sql.png", "alt": "logo sql", "name": "SQL" },
+         { "src": "/img/logo-html.png", "alt": "logo html", "name": "HTML" },
+         { "src": "/img/logo-css.png", "alt": "logo css", "name": "CSS" },
+         { "src": "/img/logo-js.png", "alt": "logo js", "name": "JavaScript" },
+         { "src": "/img/logo-uml.png", "alt": "logo uml", "name": "UML" }
+      ],
+      "frameworksAndTools": [
+         { "src": "/img/logo-nginx.png", "alt": "logo Nginx", "name": "Nginx" },
+         { "src": "/img/logo-pm2.png", "alt": "logo Pm2", "name": "Pm2" },
+         { "src": "/img/logo-docker.png", "alt": "logo Docker", "name": "Docker" },
+         { "src": "/img/logo-aws.png", "alt": "logo Amazon Web Services", "name": "AWS" },
+         { "src": "/img/logo-psql.png", "alt": "logo PostGreSQL", "name": "PostgreSQL" },
+         { "src": "/img/logo-nodejs.png", "alt": "logo NodeJs", "name": "Node.js" },
+         { "src": "/img/logo-expressjs.png", "alt": "logo ExpressJs", "name": "Express.js" },
+         { "src": "/img/logo-vite.png", "alt": "logo Vite", "name": "Vite" },
+         { "src": "/img/logo-vuejs.png", "alt": "logo Vue.js", "name": "Vue.js" },
+         { "src": "/img/logo-reactjs.png", "alt": "logo ReactJs", "name": "React.js" },
+         { "src": "/img/logo-tailwind.png", "alt": "logo Tailwind", "name": "Tailwind CSS" },
+         { "src": "/img/logo-django.png", "alt": "logo Django", "name": "Django" },
+         { "src": "/img/logo-scrum.png", "alt": "logo Scrum", "name": "Scrum" },
+         { "src": "/img/logo-git.png", "alt": "logo Git", "name": "Git" }
+      ]
+   },
+   "taskbar": [
+      {
+         "src": "/img/logo-home.png",
+         "alt": "logo home"
+      },
+      {
+         "src": "/img/logo-about.png",
+         "alt": "logo about"
+      },
+      {
+         "src": "/img/logo-skills.png",
+         "alt": "logo skills"
+      },
+      {
+         "src": "/img/logo-projects.png",
+         "alt": "logo projects"
+      }
+   ],
+   "arrow": {
+            "src": "/img/arrow.png",
+            "alt": "arrow button"
+         }
+}
