@@ -17,5 +17,22 @@
             <%- data.home.job %>
         </h3>
     </div>
+    <div class="flex flex-col flex-wrap max-w-6xl text-l text-justify items-center justify-around grow lg:text-xl">
+        <div class="flex h-28 w-28 rounded-full overflow-hidden lg:h-80 lg:w-fit lg:rounded-lg lg:flex-none">
+            <img class="h-44 lg:h-80 max-w-fit" src="<%= data.about.content.image.src %>" alt="<%= data.about.content.image.alt %>" >
+        </div>
+        <% data.about.content.paragraphs.forEach(paragraph => { %>
+             <p class="indent-8 bg-black/80">
+                 <%- paragraph.text %>
+             </p>
+         <% }) %>
+        <div class="flex flex-row flex-wrap w-full max-w-2xl justify-around lg:flex-nowrap lg:my-3">
+         <% data.about.content.links.forEach(link => { %>
+             <a class="flex items-center p-1 no-underline" href="<%= link.href %>" target="_blank">
+                 <img class="h-8 w-8 rounded-full mr-3 bg-white" src="<%= link.icon.src %>" alt="<%= link.icon.alt %>"><%- link.text %>
+             </a>
+         <% }) %>  
+        </div>		
+    </div>
     <%- include('arrow', { id: 'arrow_button' }) %>
 </section>
