@@ -740,6 +740,10 @@ video {
   justify-content: space-around;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1054,6 +1058,14 @@ video {
 
   .lg\:flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .lg\:overflow-auto {
+    overflow: auto;
+  }
+
+  .lg\:overflow-hidden {
+    overflow: hidden;
   }
 
   .lg\:rounded-lg {
