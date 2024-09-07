@@ -14,7 +14,7 @@
         <h1 class="flex justify-center font-extrabold text-center lg:text-6xl text-3xl"><%- data.skills.title_frameworks %></h1>
         <div class="flex flex-row flex-wrap justify-around items-center font-extrabold grow m-2 lg:mx-10">
             <% data.skills.frameworksAndTools.forEach(frames => { %>
-                <img class="w-32 h-12 lg:w-44 lg:h-20 rounded-lg m-2 lg:mx-10 bg-white lg:pl-6 lg:pr-6 pl-8 pr-8" src="<%- frames.src %>" alt="<%- frames.alt %>">
+                <div class="flex justify-center items-center w-32 h-12 rounded-lg m-2 bg-white overflow-hidden"><img class="w-28 max-w-none" src="<%- frames.src %>" alt="<%- frames.alt %>"></div>
             <% }) %>   
         </div>
     </div>
