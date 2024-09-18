@@ -62,12 +62,20 @@
    },
    "home": {
       "id": "home",
-      "cv" : {
+      "cvs" : [
+         {
          "title": "CV",
          "href": "/cv",
          "src" : "/img/logo-pdf.png",
          "alt": "alt"
       },
+      {
+         "title": "CV_alternance",
+         "href": "/cv_alternance",
+         "src" : "/img/logo-pdf.png",
+         "alt": "alt"
+      }
+   ],
       "name": "DOMELIER Ariitehau",
       "job": "Développeur FullStack Junior"
    },

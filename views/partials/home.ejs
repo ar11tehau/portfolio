@@ -21,18 +21,20 @@
                 <%- paragraph.text %>
             </p>
             <% }) %>
-                <div class="flex flex-row flex-wrap w-full max-w-2xl justify-around lg:flex-nowrap lg:my-3">
+                <div class="flex flex-row flex-wrap w-full justify-around lg:flex-nowrap lg:my-3">
                     <% data.about.content.links.forEach(link=> { %>
                         <a class="flex items-center p-1 no-underline" href="<%= link.href %>" target="_blank">
                             <img class="h-8 w-8 rounded-full mr-3 bg-white" src="<%= link.icon.src %>"
                                 alt="<%= link.icon.alt %>"><%- link.text %>
                         </a>
                     <% }) %>
+                    <% data.home.cvs.forEach(cv => { %>
                         <a class="flex items-center p-1 no-underline"
-                            href="<%- data.home.cv.href %>" target="_blank">
-                            <img class="h-8 w-8 rounded-full mr-3" src="<%- data.home.cv.src %>"
-                                alt="<%- data.home.cv.alt %>" /><%- data.home.cv.title %>
+                            href="<%- cv.href %>" target="_blank">
+                            <img class="h-8 w-8 rounded-full mr-3" src="<%- cv.src %>"
+                                alt="<%- cv.alt %>" /><%- cv.title %>
                         </a>
+                    <% }) %>
                 </div>
     </div>
     <%- include('arrow', { id: 'arrow_button' }) %>

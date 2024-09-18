@@ -26,6 +26,11 @@ app.get("/cv", function(req, res) {
     res.sendFile(filename)
 });
 
+app.get("/cv_alternance", function(req, res) {
+    const filename = path.join(__dirname + '/public/pdf/DOMELIER_ARIITEHAU_CV_BACHELOR.pdf')
+    res.sendFile(filename)
+});
+
 app.get("/cv/fr", function(req, res) {
     res.render("cv_fr")
 })
