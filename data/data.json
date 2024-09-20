@@ -84,6 +84,36 @@
       "title": "Projects",
       "projects": [
          {
+            "title": "StepOut",
+            "description": "Carte interactive de découverte de monument historique",
+            "details": [
+               "Cette application a été développée dans le cadre de la formation de Développeur d'application fullstack à l'ENSEEIHT lors d'un hackathon qui s'est tenu sur 2 fois une semaine. Le groupe était constitué de 4 développeurs sous la supervision d'un instructeur. Nous avons réalisé en partant de zéro une application qui permet à l'utilisateur de découvrir de façon ludique des monuments historiques d'une ville. J'y ai développer l'intégration de la carte Leaflet avec la gestion de l'affichage des points d'intérêt sur la carte, le calcul de distance entre la position de l'utilisateur et du point ainsi que le débloquage des informations liés aux points d'intérêts. login: \"test@test.fr\", mdp:\"testme\")"
+            ],
+            "technologies": {
+               "frontend": [
+                  { "src": "/img/logo-vuejs-2.png", "alt": "logo Vue" },
+                  { "src": "/img/logo-tailwind-2.png", "alt": "logo Tailwind" }
+               ],
+               "backend": [
+                  { "src": "/img/logo-nodejs-2.png", "alt": "logo NodeJs" },
+                  { "src": "/img/logo-expressjs-2.png", "alt": "logo ExpressJs" },
+                  { "src": "/img/logo-psql-2.png", "alt": "logo PostGreSQL" },
+                  { "src": "/img/logo-nginx-2.png", "alt": "logo Nginx" },
+                  { "src": "/img/logo-pm2-2.png", "alt": "logo Pm2" }
+               ]
+            },
+            "links": [
+               {
+                  "href": "https://github.com/Bazajee/StepOut",
+                  "text": "Code"
+               },
+               {
+                  "href": "https://map.domelier.fr",
+                  "text": "Site Desktop/Mobile"
+               }
+            ]
+         },
+         {
             "title": "Chat",
             "description": "Application de chat qui permet de discuter avec un ami en REACT et webSocket",
             "details": [

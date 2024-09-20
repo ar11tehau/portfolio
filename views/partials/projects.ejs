@@ -6,13 +6,13 @@
         </h1>
         <div class="flex flex-col justify-around grow">
             <% data.projects.projects.forEach(project=> { %>
-                <div class="border border-white rounded-md p-2 m-1">
+                <div class="border border-white max-w-6xl rounded-md p-2 m-1">
                     <div class="m-4">
                         <p class="text-2xl font-bold"><%- project.title %></p>
-                        <p class="text-white text-lg pb-2 font-bold">
+                        <p class="text-white text-justify text-lg pb-2 font-bold">
                             <%- project.description %>
                         </p>
-                        <p class="text-white pb-2"><%- project.details %></p>
+                        <p class="text-white text-justify pb-2"><%- project.details %></p>
                     </div>
                     <div class="flex justify-around flex-wrap">
                         <div class="flex">
