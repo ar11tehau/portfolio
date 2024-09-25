@@ -79,10 +79,10 @@
       "name": "DOMELIER Ariitehau",
       "job": "Développeur FullStack"
    },
-   "projects": {
-      "id": "projects",
-      "title": "Projects",
-      "projects": [
+   "projets": {
+      "id": "projets",
+      "title": "Projets",
+      "projets": [
          {
             "title": "StepOut",
             "description": "Carte interactive de découverte de monument historique",
@@ -306,8 +306,8 @@
          "alt": "logo skills"
       },
       {
-         "src": "/img/logo-projects.png",
-         "alt": "logo projects"
+         "src": "/img/logo-projets.png",
+         "alt": "logo projets"
       }
    ],
    "arrow": {
