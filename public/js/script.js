@@ -3,14 +3,14 @@
 
 function init() {
     click_go("arrow_button", "skills")
-    click_go("arrow_button_2", "projects")
+    click_go("arrow_button_2", "projets")
     click_go("arrow_button_3", "home")
     // click_go("arrow_button_4", "home")
 
     click_go("logo_home", "home")
     // click_go("logo_about", "about")
     click_go("logo_skills", "skills")
-    click_go("logo_projects", "projects")
+    click_go("logo_projets", "projets")
 }
 
 function click_go(elt, dest) {
