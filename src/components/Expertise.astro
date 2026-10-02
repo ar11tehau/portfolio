@@ -1,0 +1,40 @@
+---
+const domains = [
+	{
+		title: 'Développement Full-Stack',
+		description:
+			"Création d'applications robustes et scalables avec Laravel, Vue.js, et Astro.",
+	},
+	{
+		title: 'DevOps & Infrastructure',
+		description:
+			'Gestion de VPS Linux, automatisation CI/CD via GitHub Actions, Docker et Nginx.',
+	},
+	{
+		title: 'Data & Ingénierie Scientifique',
+		description:
+			'Traitement de données météorologiques et océanographiques, Python, APIs géospatiales.',
+	},
+] as const;
+---
+
+<section class="bg-zinc-950 px-6 py-24 text-zinc-100" aria-labelledby="expertise-heading">
+	<div class="mx-auto max-w-5xl">
+		<p class="mb-4 text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase">Compétences</p>
+
+		<h2 id="expertise-heading" class="text-2xl font-semibold tracking-tight sm:text-3xl">
+			Mes Domaines d&apos;Expertise
+		</h2>
+
+		<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+			{
+				domains.map((domain) => (
+					<article class="rounded-lg border border-zinc-800 bg-zinc-950 p-6 transition-colors hover:border-zinc-600 hover:bg-zinc-900/50">
+						<h3 class="text-base font-medium tracking-tight text-zinc-100">{domain.title}</h3>
+						<p class="mt-3 text-sm leading-relaxed text-zinc-400">{domain.description}</p>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
