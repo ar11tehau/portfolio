@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from './Hero.astro';
+import Expertise from './Expertise.astro';
+import Projects from './Projects.astro';
+import Career from './Career.astro';
+import Footer from './Footer.astro';
+import { content, type Locale } from '../i18n/content';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+---
+
+<Layout lang={lang} alternates={{ fr: '/', en: '/en/' }}>
+	<Hero t={t} />
+	<Expertise t={t} />
+	<Projects t={t} />
+	<Career t={t} />
+	<Footer t={t} />
+</Layout>

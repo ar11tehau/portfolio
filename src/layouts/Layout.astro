@@ -1,18 +1,75 @@
 ---
 import '../styles/global.css';
+import { content, site, type Locale } from '../i18n/content';
+
+interface Props {
+	lang: Locale;
+	title?: string;
+	description?: string;
+	/** Chemin de la page dans chaque langue, pour les balises hreflang */
+	alternates?: Partial<Record<Locale, string>>;
+	noindex?: boolean;
+	bodyClass?: string;
+}
+
+const {
+	lang,
+	title = content[lang].meta.title,
+	description = content[lang].meta.description,
+	alternates = {},
+	noindex = false,
+	bodyClass = 'bg-zinc-950',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const ogImage = new URL('/og.png', site.url).href;
+
+const person = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: site.name,
+	url: site.url,
+	jobTitle: lang === 'fr' ? 'Développeur full-stack' : 'Full-stack developer',
+	sameAs: [site.github, site.linkedin],
+};
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content={site.name} />
+		<meta name="theme-color" content="#09090b" />
+		{noindex && <meta name="robots" content="noindex" />}
+		<link rel="canonical" href={canonical} />
+		{
+			Object.entries(alternates).map(([locale, path]) => (
+				<link rel="alternate" hreflang={locale} href={new URL(path, site.url).href} />
+			))
+		}
+		{alternates.fr && <link rel="alternate" hreflang="x-default" href={new URL(alternates.fr, site.url).href} />}
+
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Ariitehau Domelier — Développeur Full-Stack &amp; Ingénieur Data</title>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={site.name} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content={content[lang].meta.ogLocale} />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<script type="application/ld+json" set:html={JSON.stringify(person)} />
 	</head>
-	<body class="min-h-svh bg-zinc-950">
+	<body class:list={['min-h-svh antialiased', bodyClass]}>
 		<slot />
 	</body>
 </html>

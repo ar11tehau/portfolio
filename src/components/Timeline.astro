@@ -1,0 +1,49 @@
+---
+import type { TimelineEntry } from '../i18n/content';
+
+interface Props {
+	heading: string;
+	items: readonly TimelineEntry[];
+	/** Variante claire et compacte pour le CV imprimable */
+	variant?: 'site' | 'print';
+}
+
+const { heading, items, variant = 'site' } = Astro.props;
+const print = variant === 'print';
+---
+
+<div>
+	<h3 class:list={['text-sm font-medium tracking-[0.15em] uppercase', print ? 'text-zinc-500' : 'text-zinc-400']}>
+		{heading}
+	</h3>
+	<ol class:list={['mt-6 border-l', print ? 'space-y-4 border-zinc-300' : 'space-y-8 border-zinc-800']}>
+		{
+			items.map((item) => (
+				<li class="relative pl-6">
+					<span
+						class:list={[
+							'absolute top-1.5 -left-[5px] size-[9px] rounded-full border',
+							print ? 'border-zinc-400 bg-white' : 'border-zinc-600 bg-zinc-950',
+						]}
+						aria-hidden="true"
+					/>
+					<p class:list={['text-xs tabular-nums', print ? 'text-zinc-500' : 'text-zinc-400']}>{item.period}</p>
+					<p class:list={['mt-1 font-medium', print ? 'text-sm text-zinc-900' : 'text-zinc-100']}>{item.title}</p>
+					<p class:list={['text-sm', print ? 'text-zinc-600' : 'text-zinc-400']}>{item.place}</p>
+					{item.details && (
+						<ul
+							class:list={[
+								'mt-2 list-disc space-y-1 pl-4 text-sm',
+								print ? 'text-zinc-700 marker:text-zinc-400' : 'text-zinc-400 marker:text-zinc-600',
+							]}
+						>
+							{item.details.map((detail) => (
+								<li>{detail}</li>
+							))}
+						</ul>
+					)}
+				</li>
+			))
+		}
+	</ol>
+</div>

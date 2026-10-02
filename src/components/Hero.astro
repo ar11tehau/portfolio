@@ -1,4 +1,11 @@
 ---
+import type { Content } from '../i18n/content';
+
+interface Props {
+	t: Content;
+}
+
+const { t } = Astro.props;
 ---
 
 <section class="relative isolate min-h-svh overflow-hidden bg-zinc-950 text-zinc-100">
@@ -7,26 +14,43 @@
 		aria-hidden="true"
 	></div>
 
-	<div class="relative mx-auto flex min-h-svh max-w-5xl flex-col justify-center px-6 py-24">
-		<p class="mb-6 text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase">
-			Portfolio
+	<nav class="relative mx-auto flex max-w-5xl justify-end px-6 pt-6">
+		<a
+			href={t.nav.switchHref}
+			hreflang={t.nav.switchLang}
+			lang={t.nav.switchLang}
+			class="rounded-md px-2 py-1 text-sm text-zinc-400 transition-colors hover:text-zinc-100 focus-visible:outline-2 focus-visible:outline-zinc-100"
+		>
+			{t.nav.switchLabel}
+		</a>
+	</nav>
+
+	<div class="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-5xl flex-col justify-center px-6 pb-24">
+		<p class="mb-6 text-sm font-medium tracking-[0.2em] text-zinc-400 uppercase">
+			{t.hero.eyebrow}
 		</p>
 
 		<h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-			Développeur Full-Stack &amp; Ingénieur Data
+			{t.hero.title}
 		</h1>
 
 		<p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
-			Je conçois des architectures robustes avec Laravel et Vue, et je développe des outils
-			liés à la météo et à l’océanographie — fiables, maintenables, orientés production.
+			{t.hero.lead}
 		</p>
 
-		<div class="mt-10">
+		<div class="mt-10 flex flex-wrap gap-3">
 			<a
 				href="#projets"
 				class="inline-flex items-center rounded-md bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100"
 			>
-				Voir mes projets
+				{t.hero.ctaProjects}
+			</a>
+			<a
+				href={t.cv.file}
+				download
+				class="inline-flex items-center rounded-md border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100"
+			>
+				{t.hero.ctaCv}
 			</a>
 		</div>
 	</div>
