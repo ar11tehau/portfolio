@@ -72,7 +72,7 @@ const fr: Content = {
 	hero: {
 		eyebrow: 'Ariitehau Domelier',
 		title: 'Développeur full‑stack, ancien prévisionniste météo',
-		lead: 'Dix ans dans la Marine nationale, dont sept à produire des prévisions météo et océanographiques pour des unités en opération. Aujourd’hui, je conçois des applications web avec Laravel, Vue.js et Astro, et j’héberge et déploie moi-même ce que je construis.',
+		lead: 'Dix ans dans la Marine nationale, dont sept à produire des prévisions météo et océanographiques pour des unités en opération. Aujourd’hui développeur full-stack chez Datakode, je mène des projets web clients de bout en bout avec Laravel, Vue.js et Nuxt, du cadrage au déploiement.',
 		ctaProjects: 'Voir mes projets',
 		ctaCv: 'Télécharger mon CV',
 	},
@@ -84,7 +84,7 @@ const fr: Content = {
 				title: 'Développement full-stack',
 				description:
 					'Applications web de bout en bout : API, interfaces, base de données, typage strict.',
-				tags: ['Laravel', 'Vue.js', 'Astro', 'TypeScript', 'SQL'],
+				tags: ['Laravel', 'Vue.js', 'Nuxt', 'Astro', 'TypeScript', 'SQL'],
 			},
 			{
 				title: 'Infrastructure & déploiement',
@@ -140,10 +140,28 @@ const fr: Content = {
 		education: 'Formation',
 		experienceItems: [
 			{
+				period: 'oct. 2024 – aujourd’hui',
+				title: 'Développeur full-stack',
+				place: 'Datakode — Auterive (CDI)',
+				details: [
+					'Projets web clients de bout en bout, dans une équipe de quatre',
+					'Cadrage du besoin et relation client : ateliers, chiffrage, suivi',
+					'Conception et développement d’applications Laravel, Vue.js et Nuxt',
+					'Déploiement, infrastructure, maintien en conditions opérationnelles et support',
+				],
+			},
+			{
+				period: 'mars – août 2024',
+				title: 'Ingénieur de développement full-stack (stage)',
+				place: 'Alteca — Toulouse',
+				details: ['Application web d’invitation des collaborateurs aux événements d’entreprise (Angular, Python, GitLab)'],
+			},
+			{
 				period: '2018 – 2023',
 				title: 'Expert prévisionniste météo',
 				place: 'Centre interarmées de soutien météorologique aux forces, Marine nationale — Toulouse',
 				details: [
+					'Prévisions opérationnelles : modèles numériques, données satellite et in situ, briefings décisionnels sous contrainte de temps',
 					'Soutien météo à distance des unités déployées',
 					'Outils VBA : génération automatique des briefings à partir du serveur météo, archivage de la production quotidienne, mise à jour des données d’un site',
 				],
@@ -205,7 +223,7 @@ const en: Content = {
 	hero: {
 		eyebrow: 'Ariitehau Domelier',
 		title: 'Full‑stack developer, former weather forecaster',
-		lead: 'Ten years in the French Navy, seven of them producing weather and ocean forecasts for units in operation. Today I build web applications with Laravel, Vue.js and Astro, and I host and deploy what I build myself.',
+		lead: 'Ten years in the French Navy, seven of them producing weather and ocean forecasts for units in operation. Now a full-stack developer at Datakode, I deliver client web projects end to end with Laravel, Vue.js and Nuxt, from scoping to deployment.',
 		ctaProjects: 'See my projects',
 		ctaCv: 'Download my resume',
 	},
@@ -216,7 +234,7 @@ const en: Content = {
 			{
 				title: 'Full-stack development',
 				description: 'End-to-end web applications: APIs, interfaces, databases, strict typing.',
-				tags: ['Laravel', 'Vue.js', 'Astro', 'TypeScript', 'SQL'],
+				tags: ['Laravel', 'Vue.js', 'Nuxt', 'Astro', 'TypeScript', 'SQL'],
 			},
 			{
 				title: 'Infrastructure & deployment',
@@ -272,10 +290,28 @@ const en: Content = {
 		education: 'Education',
 		experienceItems: [
 			{
+				period: 'Oct 2024 – present',
+				title: 'Full-stack developer',
+				place: 'Datakode — Auterive, France (permanent)',
+				details: [
+					'End-to-end client web projects in a team of four',
+					'Requirements and client relations: workshops, estimates, follow-up',
+					'Design and development of Laravel, Vue.js and Nuxt applications',
+					'Deployment, infrastructure, operations and user support',
+				],
+			},
+			{
+				period: 'Mar – Aug 2024',
+				title: 'Full-stack software engineer (internship)',
+				place: 'Alteca — Toulouse',
+				details: ['Web application for inviting employees to company events (Angular, Python, GitLab)'],
+			},
+			{
 				period: '2018 – 2023',
 				title: 'Expert weather forecaster',
 				place: 'Joint military weather support centre, French Navy — Toulouse',
 				details: [
+					'Operational forecasts: numerical models, satellite and in situ data, time-critical decision briefings',
 					'Remote weather support for deployed units',
 					'VBA tools: automatic briefing generation from the weather server, daily production archiving, website data updates',
 				],

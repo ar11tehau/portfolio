@@ -16,7 +16,7 @@ const print = variant === 'print';
 	<h3 class:list={['text-sm font-medium tracking-[0.15em] uppercase', print ? 'text-zinc-500' : 'text-zinc-400']}>
 		{heading}
 	</h3>
-	<ol class:list={['mt-6 border-l', print ? 'space-y-4 border-zinc-300' : 'space-y-8 border-zinc-800']}>
+	<ol class:list={['border-l', print ? 'mt-3 space-y-2.5 border-zinc-300' : 'mt-6 space-y-8 border-zinc-800']}>
 		{
 			items.map((item) => (
 				<li class="relative pl-6">
@@ -33,7 +33,8 @@ const print = variant === 'print';
 					{item.details && (
 						<ul
 							class:list={[
-								'mt-2 list-disc space-y-1 pl-4 text-sm',
+								'list-disc pl-4',
+								print ? 'mt-1 space-y-0.5 text-[13px] leading-snug' : 'mt-2 space-y-1 text-sm',
 								print ? 'text-zinc-700 marker:text-zinc-400' : 'text-zinc-400 marker:text-zinc-600',
 							]}
 						>
