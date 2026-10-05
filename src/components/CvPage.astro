@@ -10,7 +10,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = content[lang];
 const home = lang === 'fr' ? '/' : '/en/';
-const skills = [...new Set(t.expertise.domains.flatMap((domain) => domain.tags))];
+const skills = t.cv.skillList;
 const projects = t.projects.items.filter((project) => project.status === 'production');
 ---
 
@@ -32,7 +32,7 @@ const projects = t.projects.items.filter((project) => project.status === 'produc
 		<header class="flex flex-wrap items-end justify-between gap-4 border-b border-zinc-200 pb-4">
 			<div>
 				<h1 class="text-3xl font-semibold tracking-tight">{site.name}</h1>
-				<p class="mt-1 text-zinc-600">{t.hero.title}</p>
+				<p class="mt-1 text-zinc-600">{t.cv.headline} · Toulouse</p>
 			</div>
 			<ul class="text-right text-sm text-zinc-600">
 				<li><a href={`mailto:${site.email}`}>{site.email}</a></li>
@@ -42,20 +42,20 @@ const projects = t.projects.items.filter((project) => project.status === 'produc
 			</ul>
 		</header>
 
-		<p class="mt-4 text-sm leading-relaxed text-zinc-700">{t.hero.lead}</p>
+		<p class="mt-4 text-sm leading-normal text-zinc-700">{t.cv.summary}</p>
 
-		<section class="mt-5">
+		<section class="mt-4">
 			<h2 class="text-sm font-medium tracking-[0.15em] text-zinc-500 uppercase">{t.cv.skills}</h2>
 			<ul class="mt-3 flex flex-wrap gap-1.5">
 				{skills.map((skill) => <li class="rounded border border-zinc-200 px-2 py-0.5 text-xs text-zinc-700">{skill}</li>)}
 			</ul>
 		</section>
 
-		<section class="mt-5">
+		<section class="mt-4">
 			<Timeline heading={t.career.experience} items={t.career.experienceItems} variant="print" />
 		</section>
 
-		<div class="mt-5 grid grid-cols-2 gap-10 break-inside-avoid">
+		<div class="mt-4 grid grid-cols-2 gap-10 break-inside-avoid">
 			<div>
 				<h3 class="text-sm font-medium tracking-[0.15em] text-zinc-500 uppercase">{t.career.education}</h3>
 				<ul class="mt-3 space-y-2">
@@ -73,7 +73,7 @@ const projects = t.projects.items.filter((project) => project.status === 'produc
 				</ul>
 			</div>
 			<div>
-				<h3 class="text-sm font-medium tracking-[0.15em] text-zinc-500 uppercase">{t.projects.title}</h3>
+				<h3 class="text-sm font-medium tracking-[0.15em] text-zinc-500 uppercase">{t.projects.eyebrow}</h3>
 				<ul class="mt-3 space-y-2">
 					{
 						projects.map((project) => (

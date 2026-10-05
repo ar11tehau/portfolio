@@ -1,0 +1,18 @@
+---
+interface Props {
+	index: string;
+	eyebrow: string;
+	title: string;
+	id: string;
+}
+
+const { index, eyebrow, title, id } = Astro.props;
+---
+
+<p class="mb-4 font-mono text-xs tracking-[0.2em] text-lagon uppercase">
+	<span class="text-brique">{index} /</span>
+	{eyebrow}
+</p>
+<h2 id={id} class="font-display text-3xl font-semibold tracking-tight text-ocean sm:text-4xl">
+	{title}
+</h2>

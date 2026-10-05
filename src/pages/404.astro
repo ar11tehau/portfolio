@@ -7,16 +7,16 @@ const en = content.en;
 ---
 
 <Layout lang="fr" title={`${t.notFound.title} — Ariitehau Domelier`} noindex>
-	<main class="mx-auto flex min-h-svh max-w-5xl flex-col justify-center px-6 text-zinc-100">
-		<p class="text-sm font-medium tracking-[0.2em] text-zinc-400 uppercase">404</p>
-		<h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{t.notFound.title}</h1>
-		<p class="mt-4 text-zinc-400">{t.notFound.lead}</p>
-		<p class="mt-1 text-zinc-500" lang="en">{en.notFound.lead}</p>
+	<main class="mx-auto flex min-h-svh max-w-5xl flex-col justify-center px-6 text-ocean">
+		<p class="font-mono text-sm tracking-[0.2em] text-brique uppercase">404</p>
+		<h1 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">{t.notFound.title}</h1>
+		<p class="mt-4 text-slate-600">{t.notFound.lead}</p>
+		<p class="mt-1 text-slate-500" lang="en">{en.notFound.lead}</p>
 		<div class="mt-10 flex flex-wrap gap-3 text-sm">
-			<a href="/" class="rounded-md bg-zinc-100 px-5 py-2.5 font-medium text-zinc-950 transition-colors hover:bg-white">
+			<a href="/" class="rounded-md bg-lagon px-5 py-2.5 font-medium text-white transition-colors hover:bg-ocean">
 				{t.notFound.back}
 			</a>
-			<a href="/en/" lang="en" class="rounded-md border border-zinc-700 px-5 py-2.5 font-medium transition-colors hover:border-zinc-400">
+			<a href="/en/" lang="en" class="rounded-md border border-ocean/20 px-5 py-2.5 font-medium transition-colors hover:border-lagon hover:text-lagon">
 				{en.notFound.back}
 			</a>
 		</div>

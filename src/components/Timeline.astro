@@ -13,29 +13,29 @@ const print = variant === 'print';
 ---
 
 <div>
-	<h3 class:list={['text-sm font-medium tracking-[0.15em] uppercase', print ? 'text-zinc-500' : 'text-zinc-400']}>
+	<h3 class:list={['text-sm font-medium tracking-[0.15em] uppercase', print ? 'text-zinc-500' : 'font-mono text-xs text-lagon']}>
 		{heading}
 	</h3>
-	<ol class:list={['border-l', print ? 'mt-3 space-y-2.5 border-zinc-300' : 'mt-6 space-y-8 border-zinc-800']}>
+	<ol class:list={['border-l', print ? 'mt-3 space-y-2 border-zinc-300' : 'mt-6 space-y-8 border-stone-300']}>
 		{
 			items.map((item) => (
 				<li class="relative pl-6">
 					<span
 						class:list={[
 							'absolute top-1.5 -left-[5px] size-[9px] rounded-full border',
-							print ? 'border-zinc-400 bg-white' : 'border-zinc-600 bg-zinc-950',
+							print ? 'border-zinc-400 bg-white' : 'border-brique bg-white',
 						]}
 						aria-hidden="true"
 					/>
-					<p class:list={['text-xs tabular-nums', print ? 'text-zinc-500' : 'text-zinc-400']}>{item.period}</p>
-					<p class:list={['mt-1 font-medium', print ? 'text-sm text-zinc-900' : 'text-zinc-100']}>{item.title}</p>
-					<p class:list={['text-sm', print ? 'text-zinc-600' : 'text-zinc-400']}>{item.place}</p>
+					<p class:list={['text-xs tabular-nums', print ? 'text-zinc-500' : 'font-mono text-slate-500']}>{item.period}</p>
+					<p class:list={['mt-1 font-medium', print ? 'text-sm text-zinc-900' : 'font-display text-lg text-ocean']}>{item.title}</p>
+					<p class:list={['text-sm', print ? 'text-zinc-600' : 'text-slate-600']}>{item.place}</p>
 					{item.details && (
 						<ul
 							class:list={[
 								'list-disc pl-4',
 								print ? 'mt-1 space-y-0.5 text-[13px] leading-snug' : 'mt-2 space-y-1 text-sm',
-								print ? 'text-zinc-700 marker:text-zinc-400' : 'text-zinc-400 marker:text-zinc-600',
+								print ? 'text-zinc-700 marker:text-zinc-400' : 'text-slate-600 marker:text-lagon',
 							]}
 						>
 							{item.details.map((detail) => (

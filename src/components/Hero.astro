@@ -1,57 +1,92 @@
 ---
-import type { Content } from '../i18n/content';
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.jpeg';
+import Isobars from './Isobars.astro';
+import type { Content, Locale } from '../i18n/content';
 
 interface Props {
 	t: Content;
+	lang: Locale;
 }
 
-const { t } = Astro.props;
+const { t, lang } = Astro.props;
 ---
 
-<section class="relative isolate min-h-svh overflow-hidden bg-zinc-950 text-zinc-100">
+<section class="relative isolate min-h-svh overflow-hidden bg-sable text-ocean">
+	<Isobars lang={lang} class="absolute inset-0 -z-10 size-full" />
 	<div
-		class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(39,39,42,0.55),transparent_55%)]"
+		class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_30%_45%,rgba(247,242,232,0.95),rgba(247,242,232,0.6)_55%,transparent_80%)]"
 		aria-hidden="true"
 	></div>
 
-	<nav class="relative mx-auto flex max-w-5xl justify-end px-6 pt-6">
+	<nav class="mx-auto flex max-w-5xl items-center justify-between px-6 pt-6">
+		<span class="font-mono text-xs tracking-[0.2em] text-slate-500 uppercase">domelier.fr</span>
 		<a
 			href={t.nav.switchHref}
 			hreflang={t.nav.switchLang}
 			lang={t.nav.switchLang}
-			class="rounded-md px-2 py-1 text-sm text-zinc-400 transition-colors hover:text-zinc-100 focus-visible:outline-2 focus-visible:outline-zinc-100"
+			class="rounded-md px-2 py-1 font-mono text-xs tracking-wider text-slate-600 uppercase transition-colors hover:text-lagon focus-visible:outline-2 focus-visible:outline-lagon"
 		>
 			{t.nav.switchLabel}
 		</a>
 	</nav>
 
-	<div class="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-5xl flex-col justify-center px-6 pb-24">
-		<p class="mb-6 text-sm font-medium tracking-[0.2em] text-zinc-400 uppercase">
-			{t.hero.eyebrow}
-		</p>
+	<div
+		class="mx-auto grid min-h-[calc(100svh-4rem)] max-w-5xl items-center gap-12 px-6 pt-10 pb-24 md:grid-cols-[1fr_auto] md:pt-0"
+	>
+		<div class="order-2 md:order-1">
+			<p class="mb-6 font-mono text-xs tracking-[0.2em] text-brique uppercase">
+				{t.hero.eyebrow}
+			</p>
 
-		<h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-			{t.hero.title}
-		</h1>
+			<h1 class="max-w-2xl font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+				{t.hero.title}
+			</h1>
 
-		<p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
-			{t.hero.lead}
-		</p>
+			<p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-700">
+				{t.hero.lead}
+			</p>
 
-		<div class="mt-10 flex flex-wrap gap-3">
-			<a
-				href="#projets"
-				class="inline-flex items-center rounded-md bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100"
-			>
-				{t.hero.ctaProjects}
-			</a>
+			<div class="mt-10 flex flex-wrap gap-3">
+				<a
+					href="#projets"
+					class="inline-flex items-center rounded-md bg-lagon px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-ocean focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lagon"
+				>
+					{t.hero.ctaProjects}
+				</a>
+				<a
+					href="#contact"
+					class="inline-flex items-center rounded-md border border-ocean/20 bg-white/60 px-5 py-2.5 text-sm font-medium text-ocean transition-colors hover:border-lagon hover:text-lagon focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lagon"
+				>
+					{t.hero.ctaContact}
+				</a>
+			</div>
 			<a
 				href={t.cv.file}
 				download
-				class="inline-flex items-center rounded-md border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100"
+				class="mt-5 inline-block font-mono text-xs tracking-wider text-slate-500 uppercase underline decoration-slate-300 underline-offset-4 transition-colors hover:text-lagon hover:decoration-lagon"
 			>
 				{t.hero.ctaCv}
 			</a>
 		</div>
+
+		<figure class="order-1 w-40 sm:w-52 md:order-2 md:w-72">
+			<div class="relative">
+				<div class="absolute -right-3 -bottom-3 size-full rounded-2xl bg-lagon/25" aria-hidden="true"></div>
+				<Image
+					src={portrait}
+					alt={t.hero.photoAlt}
+					widths={[160, 288, 400]}
+					sizes="(min-width: 768px) 288px, (min-width: 640px) 208px, 160px"
+					loading="eager"
+					fetchpriority="high"
+					class="relative aspect-square w-full rounded-2xl object-cover ring-1 ring-ocean/10"
+				/>
+			</div>
+			<figcaption class="mt-5 font-mono text-[11px] tracking-wider text-slate-500 uppercase">
+				<span class="text-brique">{t.hero.photoCaption}</span>
+				<span class="mt-1 block normal-case">{t.hero.coordinates}</span>
+			</figcaption>
+		</figure>
 	</div>
 </section>

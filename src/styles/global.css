@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme {
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+}
+
+@theme {
+  --color-sable: #f7f2e8;
+  --color-ocean: #0c2b3d;
+  --color-lagon: #0b8f9c;
+  --color-brique: #b5523b;
+  --color-lagon-clair: #5fd0da;
+  --color-brique-clair: #e8957f;
+}

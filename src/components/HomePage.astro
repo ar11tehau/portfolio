@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from './Hero.astro';
-import Expertise from './Expertise.astro';
+import Approach from './Approach.astro';
 import Projects from './Projects.astro';
 import Career from './Career.astro';
 import Footer from './Footer.astro';
@@ -16,8 +16,8 @@ const t = content[lang];
 ---
 
 <Layout lang={lang} alternates={{ fr: '/', en: '/en/' }}>
-	<Hero t={t} />
-	<Expertise t={t} />
+	<Hero t={t} lang={lang} />
+	<Approach t={t} />
 	<Projects t={t} />
 	<Career t={t} />
 	<Footer t={t} />

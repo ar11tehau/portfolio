@@ -1,0 +1,33 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import type { Content } from '../i18n/content';
+
+interface Props {
+	t: Content;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="demarche" class="bg-white px-6 py-24 text-ocean" aria-labelledby="approach-heading">
+	<div class="mx-auto max-w-5xl">
+		<SectionHeading index="01" eyebrow={t.approach.eyebrow} title={t.approach.title} id="approach-heading" />
+
+		<p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">{t.approach.intro}</p>
+
+		<ol class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+			{
+				t.approach.steps.map((step, index) => (
+					<li class="flex flex-col rounded-lg border border-stone-200 bg-sable p-6 transition-colors hover:border-lagon/50">
+						<span class="font-mono text-xs text-brique">{String(index + 1).padStart(2, '0')}</span>
+						<h3 class="mt-3 font-display text-xl font-medium tracking-tight text-ocean">{step.title}</h3>
+						<p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{step.description}</p>
+						<ul class="mt-6 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[11px] text-lagon">
+							{step.tags.map((tag) => <li>{tag}</li>)}
+						</ul>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</section>

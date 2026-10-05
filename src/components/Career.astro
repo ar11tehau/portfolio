@@ -1,6 +1,7 @@
 ---
 import type { Content } from '../i18n/content';
 import Timeline from './Timeline.astro';
+import SectionHeading from './SectionHeading.astro';
 
 interface Props {
 	t: Content;
@@ -9,19 +10,16 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<section id="parcours" class="bg-zinc-950 px-6 py-24 text-zinc-100" aria-labelledby="career-heading">
+<section id="parcours" class="bg-white px-6 py-24 text-ocean" aria-labelledby="career-heading">
 	<div class="mx-auto max-w-5xl">
-		<p class="mb-4 text-sm font-medium tracking-[0.2em] text-zinc-400 uppercase">{t.career.eyebrow}</p>
-
-		<h2 id="career-heading" class="text-2xl font-semibold tracking-tight sm:text-3xl">
-			{t.career.title}
-		</h2>
+		<SectionHeading index="03" eyebrow={t.career.eyebrow} title={t.career.title} id="career-heading" />
 
 		<div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
 			<Timeline heading={t.career.experience} items={t.career.experienceItems} />
 			<div>
 				<Timeline heading={t.career.education} items={t.career.educationItems} />
-				<p class="mt-10 text-sm text-zinc-400">{t.career.languages}</p>
+				<p class="mt-10 font-mono text-xs tracking-wider text-slate-600">{t.career.languages}</p>
+				<p class="mt-2 font-mono text-xs tracking-wider text-brique">{t.career.offScreen}</p>
 			</div>
 		</div>
 	</div>

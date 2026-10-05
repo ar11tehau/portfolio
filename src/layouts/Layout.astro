@@ -18,7 +18,7 @@ const {
 	description = content[lang].meta.description,
 	alternates = {},
 	noindex = false,
-	bodyClass = 'bg-zinc-950',
+	bodyClass = 'bg-sable',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, site.url).href;
@@ -42,7 +42,7 @@ const person = {
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content={site.name} />
-		<meta name="theme-color" content="#09090b" />
+		<meta name="theme-color" content="#f7f2e8" />
 		{noindex && <meta name="robots" content="noindex" />}
 		<link rel="canonical" href={canonical} />
 		{

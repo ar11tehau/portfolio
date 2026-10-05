@@ -1,0 +1,93 @@
+---
+// Fond décoratif façon carte météo : isobares autour d'une dépression et d'un anticyclone.
+// Les courbes sont calculées au build (aucun JavaScript côté client).
+import type { Locale } from '../i18n/content';
+
+interface Props {
+	lang: Locale;
+	class?: string;
+}
+
+const { lang, class: className } = Astro.props;
+
+interface PressureSystem {
+	x: number;
+	y: number;
+	label: string;
+	/** Pression au centre, en hPa */
+	core: number;
+	/** +4 hPa par isobare pour une dépression, -4 pour un anticyclone */
+	step: number;
+	phase: number;
+}
+
+const systems: PressureSystem[] = [
+	{ x: 1300, y: 110, label: lang === 'fr' ? 'D' : 'L', core: 992, step: 4, phase: 0.6 },
+	{ x: 120, y: 980, label: lang === 'fr' ? 'A' : 'H', core: 1032, step: -4, phase: 2.1 },
+];
+
+const ringCount = 7;
+const ringSpacing = 72;
+
+/** Courbe fermée légèrement déformée, lissée en Bézier (Catmull-Rom) */
+function isobar(system: PressureSystem, radius: number, index: number): string {
+	const steps = 48;
+	const points = Array.from({ length: steps }, (_, i) => {
+		const angle = (i / steps) * Math.PI * 2;
+		const wobble =
+			1 +
+			0.1 * Math.sin(2 * angle + system.phase + index * 0.15) +
+			0.05 * Math.sin(3 * angle - system.phase * 1.7);
+		return [system.x + radius * 1.35 * wobble * Math.cos(angle), system.y + radius * wobble * Math.sin(angle)];
+	});
+	const at = (i: number) => points[(i + steps) % steps]!;
+	let d = `M${at(0)[0].toFixed(1)},${at(0)[1].toFixed(1)}`;
+	for (let i = 0; i < steps; i++) {
+		const [p0, p1, p2, p3] = [at(i - 1), at(i), at(i + 1), at(i + 2)];
+		const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+		const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+		d += `C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+	}
+	return `${d}Z`;
+}
+
+const rings = systems.flatMap((system) =>
+	Array.from({ length: ringCount }, (_, index) => {
+		const radius = (index + 1) * ringSpacing;
+		const labelAngle = -Math.PI / 5 + system.phase;
+		return {
+			d: isobar(system, radius, index),
+			pressure: system.core + system.step * (index + 1),
+			labelX: system.x + radius * 1.35 * Math.cos(labelAngle),
+			labelY: system.y + radius * Math.sin(labelAngle),
+			showLabel: index % 2 === 1,
+		};
+	}),
+);
+---
+
+<svg
+	class:list={['pointer-events-none select-none', className]}
+	viewBox="0 0 1440 900"
+	preserveAspectRatio="xMidYMid slice"
+	fill="none"
+	aria-hidden="true"
+>
+	<g class="stroke-ocean/20" stroke-width="1">
+		{rings.map((ring) => <path d={ring.d} vector-effect="non-scaling-stroke" />)}
+	</g>
+	<g class="fill-slate-400 font-mono text-[11px]" text-anchor="middle" dominant-baseline="middle">
+		{
+			rings
+				.filter((ring) => ring.showLabel)
+				.map((ring) => (
+					<text x={ring.labelX} y={ring.labelY} class="stroke-sable" stroke-width="6" paint-order="stroke">
+						{ring.pressure}
+					</text>
+				))
+		}
+	</g>
+	<g class="fill-brique/80 font-display text-[44px] font-semibold" text-anchor="middle" dominant-baseline="central">
+		{systems.map((system) => <text x={system.x} y={system.y}>{system.label}</text>)}
+	</g>
+</svg>

@@ -1,3 +1,7 @@
+import type { ImageMetadata } from 'astro';
+import snackScreenshot from '../assets/project-snack.png';
+import portfolioScreenshot from '../assets/project-portfolio.png';
+
 export const locales = ['fr', 'en'] as const;
 export type Locale = (typeof locales)[number];
 
@@ -11,11 +15,15 @@ export const site = {
 
 export interface Project {
 	title: string;
-	description: string;
+	/** Le problème de départ */
+	need: string;
+	/** Ce qui a été construit pour y répondre */
+	answer: string;
 	tags: readonly string[];
 	status: 'production' | 'development';
 	url?: string;
 	repo?: string;
+	image?: ImageMetadata;
 }
 
 export interface TimelineEntry {
@@ -32,18 +40,25 @@ export interface Content {
 		eyebrow: string;
 		title: string;
 		lead: string;
+		ctaContact: string;
 		ctaProjects: string;
 		ctaCv: string;
+		photoAlt: string;
+		photoCaption: string;
+		coordinates: string;
 	};
-	expertise: {
+	approach: {
 		eyebrow: string;
 		title: string;
-		domains: readonly { title: string; description: string; tags: readonly string[] }[];
+		intro: string;
+		steps: readonly { title: string; description: string; tags: readonly string[] }[];
 	};
 	projects: {
 		eyebrow: string;
 		title: string;
 		status: Record<Project['status'], string>;
+		needLabel: string;
+		answerLabel: string;
 		sourceLabel: string;
 		items: readonly Project[];
 	};
@@ -55,87 +70,105 @@ export interface Content {
 		experienceItems: readonly TimelineEntry[];
 		educationItems: readonly TimelineEntry[];
 		languages: string;
+		offScreen: string;
 	};
-	contact: { eyebrow: string; lead: string };
-	cv: { title: string; skills: string; print: string; file: string };
+	contact: { eyebrow: string; lead: string; sub: string };
+	cv: {
+		title: string;
+		headline: string;
+		summary: string;
+		skills: string;
+		skillList: readonly string[];
+		print: string;
+		file: string;
+	};
 	notFound: { title: string; lead: string; back: string };
 }
 
 const fr: Content = {
 	meta: {
-		title: 'Ariitehau Domelier — Développeur full-stack, ancien prévisionniste météo',
+		title: 'Ariitehau Domelier — Développeur full-stack à Toulouse',
 		description:
-			'Développeur full-stack (Laravel, Vue.js, Astro) après dix ans dans la Marine nationale, dont sept comme expert prévisionniste météo-océanographe.',
+			'Développeur full-stack chez Datakode à Toulouse (Laravel, Vue.js, Nuxt), après dix ans dans la Marine nationale, dont sept comme prévisionniste météo.',
 		ogLocale: 'fr_FR',
 	},
 	nav: { switchLabel: 'English', switchHref: '/en/', switchLang: 'en' },
 	hero: {
-		eyebrow: 'Ariitehau Domelier',
+		eyebrow: 'Ariitehau Domelier · Toulouse',
 		title: 'Développeur full‑stack, ancien prévisionniste météo',
-		lead: 'Dix ans dans la Marine nationale, dont sept à produire des prévisions météo et océanographiques pour des unités en opération. Aujourd’hui développeur full-stack chez Datakode, je mène des projets web clients de bout en bout avec Laravel, Vue.js et Nuxt, du cadrage au déploiement.',
-		ctaProjects: 'Voir mes projets',
-		ctaCv: 'Télécharger mon CV',
+		lead: 'Je travaille chez Datakode sur des applications web pour des clients : on discute du besoin, je développe avec Laravel, Vue.js et Nuxt, puis je m’occupe de la mise en ligne et du suivi. Avant ça, j’ai passé dix ans dans la Marine nationale, dont sept à faire de la prévision météo et océanographique.',
+		ctaContact: 'Contact',
+		ctaProjects: 'Voir les réalisations',
+		ctaCv: 'Télécharger le CV',
+		photoAlt: 'Portrait d’Ariitehau Domelier',
+		photoCaption: 'Tahiti → Toulouse',
+		coordinates: '17°32′S 149°34′W → 43°36′N 1°26′E',
 	},
-	expertise: {
-		eyebrow: 'Compétences',
-		title: 'Ce que je fais',
-		domains: [
+	approach: {
+		eyebrow: 'Façon de travailler',
+		title: 'Partir du problème, pas de la technique',
+		intro: 'En météo, une prévision ne sert à rien si la personne en face ne la comprend pas. Un outil numérique, c’est pareil : il doit répondre à un vrai problème, et rester simple pour ceux qui s’en servent.',
+		steps: [
 			{
-				title: 'Développement full-stack',
+				title: 'Comprendre le besoin',
 				description:
-					'Applications web de bout en bout : API, interfaces, base de données, typage strict.',
-				tags: ['Laravel', 'Vue.js', 'Nuxt', 'Astro', 'TypeScript', 'SQL'],
+					'Avant d’écrire du code, échanger avec les personnes qui vont utiliser l’outil : comment elles travaillent, ce qui coince, ce qui compte vraiment.',
+				tags: ['Ateliers', 'Cadrage', 'Chiffrage'],
 			},
 			{
-				title: 'Infrastructure & déploiement',
+				title: 'Développer',
 				description:
-					'J’administre mon propre VPS : Nginx, HTTPS, pare-feu, et déploiement continu par GitHub Actions avec des accès SSH restreints.',
-				tags: ['Linux', 'Nginx', 'GitHub Actions', 'Docker'],
+					'Des applications web sur mesure, avec une idée en tête : qu’on puisse s’en servir sans mode d’emploi.',
+				tags: ['Laravel', 'Vue.js', 'Nuxt', 'Astro'],
 			},
 			{
-				title: 'Données météo & océanographiques',
+				title: 'Mettre en ligne et suivre',
 				description:
-					'Sept ans d’analyse et de prévision opérationnelle, et des outils pour automatiser la production des bulletins.',
-				tags: ['Météorologie', 'Océanographie', 'Python', 'Automatisation'],
+					'Hébergement, déploiement, mises à jour, support. Un outil n’est utile que s’il continue de marcher.',
+				tags: ['Hébergement', 'Déploiement continu', 'Support'],
 			},
 		],
 	},
 	projects: {
 		eyebrow: 'Réalisations',
-		title: 'Projets',
-		status: { production: 'En production', development: 'En développement' },
+		title: 'Quelques projets',
+		status: { production: 'En service', development: 'En développement' },
+		needLabel: 'Le point de départ',
+		answerLabel: 'Ce qui a été fait',
 		sourceLabel: 'Code source',
 		items: [
 			{
-				title: 'Micro-SaaS BTP & climat',
-				description:
-					'Plateforme d’aide à la décision pour la construction, fondée sur l’ingénierie géospatiale et les données météo.',
-				tags: ['Laravel', 'Vue.js', 'PostgreSQL', 'API météo'],
-				status: 'development',
-			},
-			{
 				title: 'Snack Te Ava Iti',
-				description:
-					'Site vitrine d’un snack à Tahiti : menu, conversion XPF / EUR / USD au taux de la BCE, pensé pour le mobile. Reconstruit et déployé automatiquement chaque jour.',
-				tags: ['EJS', 'Tailwind', 'GitHub Actions', 'Nginx'],
+				need: 'Le snack de ma mère, à Tahiti. Les clients voulaient voir le menu et les prix sur leur téléphone, y compris les touristes qui ne connaissent pas le franc pacifique.',
+				answer: 'Un site simple, pensé pour le mobile : le menu, les prix convertis en euros et en dollars, et le numéro pour commander en un clic. Il se met à jour tout seul chaque jour.',
+				tags: ['Site vitrine', 'Mobile', 'Mise à jour automatique'],
 				status: 'production',
 				url: 'https://snackteavaiti.com',
+				image: snackScreenshot,
 				repo: 'https://github.com/ar11tehau/snack',
 			},
 			{
+				title: 'Outil météo pour le BTP',
+				need: 'Sur un chantier, beaucoup de décisions dépendent de la météo.',
+				answer: 'Un outil d’aide à la décision qui croise prévisions météo et données géographiques du chantier. C’est là que mes deux métiers se rejoignent.',
+				tags: ['Aide à la décision', 'Données météo', 'Cartographie'],
+				status: 'development',
+			},
+			{
 				title: 'domelier.fr',
-				description:
-					'Mon portfolio : statique, bilingue, sans JavaScript, servi par Nginx sur mon VPS et déployé à chaque push.',
-				tags: ['Astro', 'TypeScript', 'Tailwind', 'GitHub Actions'],
+				need: 'Avoir un endroit où présenter mon parcours, en français et en anglais.',
+				answer: 'Ce site. Il tourne sur mon propre serveur et se met à jour automatiquement à chaque modification, CV compris.',
+				tags: ['Site bilingue', 'Hébergement', 'Déploiement continu'],
 				status: 'production',
 				url: 'https://domelier.fr',
+				image: portfolioScreenshot,
 				repo: 'https://github.com/ar11tehau/portfolio',
 			},
 		],
 	},
 	career: {
 		eyebrow: 'Parcours',
-		title: 'De la prévision météo au développement',
+		title: 'De la météo au développement',
 		experience: 'Expérience',
 		education: 'Formation',
 		experienceItems: [
@@ -145,7 +178,7 @@ const fr: Content = {
 				place: 'Datakode — Auterive (CDI)',
 				details: [
 					'Projets web clients de bout en bout, dans une équipe de quatre',
-					'Cadrage du besoin et relation client : ateliers, chiffrage, suivi',
+					'Cadrage du besoin et relation client : ateliers, chiffrage, suivi',
 					'Conception et développement d’applications Laravel, Vue.js et Nuxt',
 					'Déploiement, infrastructure, maintien en conditions opérationnelles et support',
 				],
@@ -161,9 +194,9 @@ const fr: Content = {
 				title: 'Expert prévisionniste météo',
 				place: 'Centre interarmées de soutien météorologique aux forces, Marine nationale — Toulouse',
 				details: [
-					'Prévisions opérationnelles : modèles numériques, données satellite et in situ, briefings décisionnels sous contrainte de temps',
+					'Prévisions opérationnelles : modèles numériques, données satellite et in situ, briefings décisionnels sous contrainte de temps',
 					'Soutien météo à distance des unités déployées',
-					'Outils VBA : génération automatique des briefings à partir du serveur météo, archivage de la production quotidienne, mise à jour des données d’un site',
+					'Outils VBA : génération automatique des briefings à partir du serveur météo, archivage de la production quotidienne, mise à jour des données d’un site',
 				],
 			},
 			{
@@ -194,14 +227,19 @@ const fr: Content = {
 			},
 		],
 		languages: 'Anglais courant (C1)',
+		offScreen: 'Hors écran : beach-volley',
 	},
 	contact: {
 		eyebrow: 'Contact',
-		lead: 'Un projet, une mission ou une question technique ?',
+		lead: 'Pour parler d’un projet, ou simplement échanger.',
+		sub: 'Le plus simple, c’est un e-mail. Je suis aussi sur LinkedIn.',
 	},
 	cv: {
 		title: 'Curriculum vitæ',
+		headline: 'Développeur full‑stack, ancien prévisionniste météo',
+		summary: 'Chez Datakode depuis 2024, je travaille sur des applications web pour des clients, du besoin jusqu’à la mise en ligne et au suivi. Avant ça, j’ai passé dix ans dans la Marine nationale, dont sept comme prévisionniste météo et océanographique : une bonne école pour expliquer clairement des choses complexes et travailler sous pression.',
 		skills: 'Compétences',
+		skillList: ['Laravel', 'Vue.js', 'Nuxt', 'Astro', 'TypeScript', 'SQL', 'Linux', 'Nginx', 'GitHub Actions', 'Docker', 'Cadrage & relation client', 'Météorologie', 'Océanographie', 'Python'],
 		print: 'Version PDF',
 		file: '/cv/ariitehau-domelier-cv.pdf',
 	},
@@ -214,78 +252,88 @@ const fr: Content = {
 
 const en: Content = {
 	meta: {
-		title: 'Ariitehau Domelier — Full-stack developer, former weather forecaster',
+		title: 'Ariitehau Domelier — Full-stack developer in Toulouse',
 		description:
-			'Full-stack developer (Laravel, Vue.js, Astro) after ten years in the French Navy, seven of them as an expert meteorological and oceanographic forecaster.',
+			'Full-stack developer at Datakode in Toulouse (Laravel, Vue.js, Nuxt), after ten years in the French Navy, seven of them as a weather forecaster.',
 		ogLocale: 'en_US',
 	},
 	nav: { switchLabel: 'Français', switchHref: '/', switchLang: 'fr' },
 	hero: {
-		eyebrow: 'Ariitehau Domelier',
+		eyebrow: 'Ariitehau Domelier · Toulouse',
 		title: 'Full‑stack developer, former weather forecaster',
-		lead: 'Ten years in the French Navy, seven of them producing weather and ocean forecasts for units in operation. Now a full-stack developer at Datakode, I deliver client web projects end to end with Laravel, Vue.js and Nuxt, from scoping to deployment.',
-		ctaProjects: 'See my projects',
-		ctaCv: 'Download my resume',
+		lead: 'I work at Datakode on web applications for clients: we talk through the need, I build it with Laravel, Vue.js and Nuxt, then I take care of deployment and follow-up. Before that, I spent ten years in the French Navy, seven of them forecasting weather and ocean conditions.',
+		ctaContact: 'Contact',
+		ctaProjects: 'See the work',
+		ctaCv: 'Download the resume',
+		photoAlt: 'Portrait of Ariitehau Domelier',
+		photoCaption: 'Tahiti → Toulouse',
+		coordinates: '17°32′S 149°34′W → 43°36′N 1°26′E',
 	},
-	expertise: {
-		eyebrow: 'Skills',
-		title: 'What I do',
-		domains: [
+	approach: {
+		eyebrow: 'How I work',
+		title: 'Start from the problem, not the tech',
+		intro: 'In meteorology, a forecast is useless if the person in front of you does not understand it. A digital tool is the same: it has to solve a real problem and stay simple for the people using it.',
+		steps: [
 			{
-				title: 'Full-stack development',
-				description: 'End-to-end web applications: APIs, interfaces, databases, strict typing.',
-				tags: ['Laravel', 'Vue.js', 'Nuxt', 'Astro', 'TypeScript', 'SQL'],
+				title: 'Understand the need',
+				description:
+					'Before writing code, talk with the people who will use the tool: how they work, what gets in the way, what really matters.',
+				tags: ['Workshops', 'Scoping', 'Estimates'],
 			},
 			{
-				title: 'Infrastructure & deployment',
+				title: 'Build',
 				description:
-					'I run my own VPS: Nginx, HTTPS, firewall, and continuous deployment with GitHub Actions over restricted SSH access.',
-				tags: ['Linux', 'Nginx', 'GitHub Actions', 'Docker'],
+					'Tailored web applications, with one goal in mind: you should not need a manual to use them.',
+				tags: ['Laravel', 'Vue.js', 'Nuxt', 'Astro'],
 			},
 			{
-				title: 'Weather & ocean data',
+				title: 'Ship and support',
 				description:
-					'Seven years of operational analysis and forecasting, plus tools to automate forecast production.',
-				tags: ['Meteorology', 'Oceanography', 'Python', 'Automation'],
+					'Hosting, deployment, updates, support. A tool is only useful if it keeps working.',
+				tags: ['Hosting', 'Continuous deployment', 'Support'],
 			},
 		],
 	},
 	projects: {
 		eyebrow: 'Work',
-		title: 'Projects',
+		title: 'A few projects',
 		status: { production: 'Live', development: 'In development' },
+		needLabel: 'Starting point',
+		answerLabel: 'What was built',
 		sourceLabel: 'Source code',
 		items: [
 			{
-				title: 'Construction & climate micro-SaaS',
-				description:
-					'Decision-support platform for construction, built on geospatial engineering and weather data.',
-				tags: ['Laravel', 'Vue.js', 'PostgreSQL', 'Weather API'],
-				status: 'development',
-			},
-			{
 				title: 'Snack Te Ava Iti',
-				description:
-					'Showcase site for a snack bar in Tahiti: menu, XPF / EUR / USD conversion at ECB rates, mobile-first. Rebuilt and deployed automatically every day.',
-				tags: ['EJS', 'Tailwind', 'GitHub Actions', 'Nginx'],
+				need: 'My mother’s snack bar in Tahiti. Customers wanted to see the menu and prices on their phone, including tourists unfamiliar with the Pacific franc.',
+				answer: 'A simple, mobile-first site: the menu, prices converted to euros and dollars, and the number to order in one tap. It updates itself every day.',
+				tags: ['Showcase site', 'Mobile', 'Automatic updates'],
 				status: 'production',
 				url: 'https://snackteavaiti.com',
+				image: snackScreenshot,
 				repo: 'https://github.com/ar11tehau/snack',
 			},
 			{
+				title: 'Weather tool for construction',
+				need: 'On a building site, many decisions depend on the weather.',
+				answer: 'A decision-support tool combining weather forecasts with the site’s geographic data. This is where my two careers meet.',
+				tags: ['Decision support', 'Weather data', 'Mapping'],
+				status: 'development',
+			},
+			{
 				title: 'domelier.fr',
-				description:
-					'My portfolio: static, bilingual, no JavaScript, served by Nginx on my VPS and deployed on every push.',
-				tags: ['Astro', 'TypeScript', 'Tailwind', 'GitHub Actions'],
+				need: 'A place to present my background, in French and English.',
+				answer: 'This site. It runs on my own server and updates itself automatically on every change, resume included.',
+				tags: ['Bilingual site', 'Hosting', 'Continuous deployment'],
 				status: 'production',
 				url: 'https://domelier.fr/en/',
+				image: portfolioScreenshot,
 				repo: 'https://github.com/ar11tehau/portfolio',
 			},
 		],
 	},
 	career: {
 		eyebrow: 'Background',
-		title: 'From weather forecasting to software',
+		title: 'From weather to software',
 		experience: 'Experience',
 		education: 'Education',
 		experienceItems: [
@@ -344,14 +392,19 @@ const en: Content = {
 			},
 		],
 		languages: 'French (native), English (C1)',
+		offScreen: 'Off screen: beach volleyball',
 	},
 	contact: {
 		eyebrow: 'Contact',
-		lead: 'A project, an assignment or a technical question?',
+		lead: 'To talk about a project, or just to chat.',
+		sub: 'Email is easiest. I am also on LinkedIn.',
 	},
 	cv: {
 		title: 'Resume',
+		headline: 'Full‑stack developer, former weather forecaster',
+		summary: 'At Datakode since 2024, I work on web applications for clients, from discussing the need through to deployment and follow-up. Before that, I spent ten years in the French Navy, seven of them as a weather and ocean forecaster: good training for explaining complex things clearly and working under pressure.',
 		skills: 'Skills',
+		skillList: ['Laravel', 'Vue.js', 'Nuxt', 'Astro', 'TypeScript', 'SQL', 'Linux', 'Nginx', 'GitHub Actions', 'Docker', 'Scoping & client relations', 'Meteorology', 'Oceanography', 'Python'],
 		print: 'PDF version',
 		file: '/en/cv/ariitehau-domelier-resume.pdf',
 	},
