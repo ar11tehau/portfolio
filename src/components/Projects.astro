@@ -22,7 +22,7 @@ const { t } = Astro.props;
 							{project.image ? (
 								<Image
 									src={project.image}
-									alt=""
+									alt={`${t.projects.screenshotAlt} ${project.title}`}
 									widths={[400, 640]}
 									sizes="(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw"
 									class="size-full object-cover object-top"

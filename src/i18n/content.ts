@@ -56,6 +56,7 @@ export interface Content {
 	projects: {
 		eyebrow: string;
 		title: string;
+		screenshotAlt: string;
 		status: Record<Project['status'], string>;
 		needLabel: string;
 		answerLabel: string;
@@ -132,6 +133,7 @@ const fr: Content = {
 	projects: {
 		eyebrow: 'Réalisations',
 		title: 'Quelques projets',
+		screenshotAlt: 'Capture d’écran du site',
 		status: { production: 'En service', development: 'En développement' },
 		needLabel: 'Le point de départ',
 		answerLabel: 'Ce qui a été fait',
@@ -297,6 +299,7 @@ const en: Content = {
 	projects: {
 		eyebrow: 'Work',
 		title: 'A few projects',
+		screenshotAlt: 'Screenshot of the website',
 		status: { production: 'Live', development: 'In development' },
 		needLabel: 'Starting point',
 		answerLabel: 'What was built',
