@@ -88,7 +88,7 @@ export interface Content {
 
 const fr: Content = {
 	meta: {
-		title: 'Ariitehau Domelier — Développeur full-stack à Toulouse',
+		title: 'Ariitehau Domelier — Développeur full-stack Laravel / Vue.js à Toulouse',
 		description:
 			'Développeur full-stack chez Datakode à Toulouse (Laravel, Vue.js, Nuxt), après dix ans dans la Marine nationale, dont sept comme prévisionniste météo.',
 		ogLocale: 'fr_FR',
@@ -96,7 +96,7 @@ const fr: Content = {
 	nav: { switchLabel: 'English', switchHref: '/en/', switchLang: 'en' },
 	hero: {
 		eyebrow: 'Ariitehau Domelier · Toulouse',
-		title: 'Développeur full‑stack, ancien prévisionniste météo',
+		title: 'Développeur full‑stack Laravel / Vue.js, ancien prévisionniste météo',
 		lead: 'Je travaille chez Datakode sur des applications web pour des clients : on discute du besoin, je développe avec Laravel, Vue.js et Nuxt, puis je m’occupe de la mise en ligne et du suivi. Avant ça, j’ai passé dix ans dans la Marine nationale, dont sept à faire de la prévision météo et océanographique.',
 		ctaContact: 'Contact',
 		ctaProjects: 'Voir les réalisations',
@@ -254,7 +254,7 @@ const fr: Content = {
 
 const en: Content = {
 	meta: {
-		title: 'Ariitehau Domelier — Full-stack developer in Toulouse',
+		title: 'Ariitehau Domelier — Full-stack Laravel / Vue.js developer in Toulouse',
 		description:
 			'Full-stack developer at Datakode in Toulouse (Laravel, Vue.js, Nuxt), after ten years in the French Navy, seven of them as a weather forecaster.',
 		ogLocale: 'en_US',
@@ -262,7 +262,7 @@ const en: Content = {
 	nav: { switchLabel: 'Français', switchHref: '/', switchLang: 'fr' },
 	hero: {
 		eyebrow: 'Ariitehau Domelier · Toulouse',
-		title: 'Full‑stack developer, former weather forecaster',
+		title: 'Full‑stack Laravel / Vue.js developer, former weather forecaster',
 		lead: 'I work at Datakode on web applications for clients: we talk through the need, I build it with Laravel, Vue.js and Nuxt, then I take care of deployment and follow-up. Before that, I spent ten years in the French Navy, seven of them forecasting weather and ocean conditions.',
 		ctaContact: 'Contact',
 		ctaProjects: 'See the work',
